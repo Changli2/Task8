@@ -1,5 +1,5 @@
 package nazh;
 
 public class nazh {
-	private int a = 5;
+	private int a = 7;
 }
