@@ -2,6 +2,6 @@ package nazh;
 
 public class nazh {
 
-	private int a = 9;
+	private int a = 10;
 
 }
