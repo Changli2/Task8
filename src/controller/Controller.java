@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Model;
+
 public class Controller extends HttpServlet{
 
 	/**
@@ -20,6 +22,7 @@ public class Controller extends HttpServlet{
 	private static final long serialVersionUID = -1951358628804251994L;
 	
 	public void init() throws ServletException {
+		Model model=  new Model(getServletConfig());
 		
 		Action.add(new HomePageAction());
 		Action.add(new GeoMapAction());
