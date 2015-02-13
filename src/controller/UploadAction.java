@@ -75,9 +75,9 @@ public class UploadAction extends Action {
 							server, farm);
 					photos.add(photo);
 
-					/*
-					 * System.out.println(id); System.out.println(owner);
-					 */
+					
+					System.out.println(id); System.out.println(owner);
+					
 
 				}
 			}
