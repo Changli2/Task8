@@ -29,10 +29,10 @@
         <url-pattern>   *.do                     </url-pattern>
     </servlet-mapping>
 
-    <servlet-mapping>
+   <!--  <servlet-mapping>
         <servlet-name>  controller-servlet        </servlet-name>
         <url-pattern>   /homePage.do                    </url-pattern>
-    </servlet-mapping>
+    </servlet-mapping> -->
 
     <welcome-file-list>
         <welcome-file>   homePage.do  </welcome-file>
