@@ -47,8 +47,8 @@
 
 		function initialize() {
    			var mapOptions = {
-     		zoom: 15
-   		};
+     			zoom: 15
+   			};
    			
    			map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
 
@@ -56,17 +56,17 @@
    			if(navigator.geolocation) {
      			navigator.geolocation.getCurrentPosition(function(position) {
        				var pos1 = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-       				var pos2 = new google.maps.LatLng(position.coords.latitude+0.003000,position.coords.longitude+0.003000);
+       				/* var pos2 = new google.maps.LatLng(position.coords.latitude+0.003000,position.coords.longitude+0.003000); */
 
        				var infowindow = new google.maps.InfoWindow({
          								map: map,position: pos1
-         						   	   ,content: 'My Current Location is :' + position.coords.latitude + "/" + position.coords.longitude
+         						   	   ,content: '<a href="googleCloud.do">' + 'You are here' + '</a>'
        				});
        				
-       				var infowindow = new google.maps.InfoWindow({
+       				/* var infowindow = new google.maps.InfoWindow({
 							map: map,position: pos2
 					   	   ,content: 'Nearest Location'
-					});
+					}); */
 
        				map.setCenter(pos1);
      			}, function() {
@@ -136,7 +136,18 @@
 		</div>
 		<div style="position:centre">	
 			<a href="https://twitter.com/intent/tweet?button_hashtag=MavenTrends&text=Wow!%20I%20found%20the%20trending%20topic%20near%20my%20place." class="twitter-hashtag-button" data-size="large">Tweet #MavenTrends</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+				<script>
+					!function(d, s, id) {
+						var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/
+								.test(d.location) ? 'http' : 'https';
+						if (!d.getElementById(id)) {
+							js = d.createElement(s);
+							js.id = id;
+							js.src = p + '://platform.twitter.com/widgets.js';
+							fjs.parentNode.insertBefore(js, fjs);
+						}
+					}(document, 'script', 'twitter-wjs');
+				</script>
 		</div>
 </div>
 </nav>
