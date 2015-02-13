@@ -20,19 +20,14 @@
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Tag');
         data.addColumn('string', 'URL');
-        data.addRows(6);
-        data.setCell(0, 0, 'Aayush');
-        data.setCell(0, 1, 'http://localhost:8080/Task8/googleCloud.do');
-        data.setCell(1, 0, 'Thomas');
-        data.setCell(1, 1, 'http://localhost:8080/Task8/googleCloud.do');
-        data.setCell(2, 0, 'Stephanie');
-        data.setCell(2, 1, 'http://localhost:8080/Task8/googleCloud.do');
-        data.setCell(3, 0, 'Chang');
-        data.setCell(3, 1, 'http://localhost:8080/Task8/googleCloud.do');
-        data.setCell(4, 0, 'Ahmad');
-        data.setCell(4, 1, 'http://localhost:8080/Task8/googleCloud.do');
-        data.setCell(5, 0, 'Next');
-        data.setCell(5, 1, 'http://localhost:8080/Task8/googleCloud.do');
+        data.addRows(${num});
+        <c:set var="rowNum" value="${0}"/> 
+        <c:forEach var="trends" items="${twitTrends}">
+        	data.setCell(${rowNum}, 0, '${trends}');
+        	<c:set var="url" value="http://${trends}"/>
+        	data.setCell(${rowNum}, 1, '${url}');
+        	<c:set var="rowNum" value="${rowNum + 1}"/>
+        </c:forEach>
         
      	// Instantiate our table object.
         var vis = new gviz_word_cumulus.WordCumulus(document.getElementById('mydiv'));
@@ -45,7 +40,7 @@
   </head>
 
   <body>
-        <h1>Top Ten Trending Tweets</h1>
+        <h1>Top ${num} Trending Tweets</h1>
         <div id="mydiv"></div>        
   </body>
 </html>

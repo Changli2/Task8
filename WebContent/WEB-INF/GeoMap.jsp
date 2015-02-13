@@ -56,17 +56,17 @@
    			if(navigator.geolocation) {
      			navigator.geolocation.getCurrentPosition(function(position) {
        				var pos1 = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-       				var pos2 = new google.maps.LatLng(position.coords.latitude+0.003000,position.coords.longitude+0.003000);
+       				/* var pos2 = new google.maps.LatLng(position.coords.latitude+0.003000,position.coords.longitude+0.003000); */
 
        				var infowindow = new google.maps.InfoWindow({
          								map: map,position: pos1
-         						   	   ,content: '<a href="geoPage.do">My Current Location is :' + position.coords.latitude + "/" + position.coords.longitude + '</a>'
+         						   	   ,content: '<a href="googleCloud.do">' + 'You are here' + '</a>'
        				});
        				
-       				var infowindow = new google.maps.InfoWindow({
+       				/* var infowindow = new google.maps.InfoWindow({
 							map: map,position: pos2
 					   	   ,content: 'Nearest Location'
-					});
+					}); */
 
        				map.setCenter(pos1);
      			}, function() {

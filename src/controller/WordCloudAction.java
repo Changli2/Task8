@@ -1,6 +1,10 @@
 package controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpServletRequest;
+
+import twitterAPI.*;
 
 public class WordCloudAction extends Action{ 
 		
@@ -11,6 +15,13 @@ public class WordCloudAction extends Action{
 
 		@Override
 		public String perform(HttpServletRequest request) {
+			
+			ArrayList<String> trends =  GetHotTrends.getPopTrends("1");
+			
+			request.setAttribute("num", trends.size());
+			
+			request.setAttribute("twitTrends", trends);
+			
 			return "GoogleCloud.jsp";
 		}
 
