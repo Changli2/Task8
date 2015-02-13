@@ -47,8 +47,8 @@
 
 		function initialize() {
    			var mapOptions = {
-     		zoom: 15
-   		};
+     			zoom: 15
+   			};
    			
    			map = new google.maps.Map(document.getElementById('map-canvas'),mapOptions);
 
@@ -56,7 +56,7 @@
    			if(navigator.geolocation) {
      			navigator.geolocation.getCurrentPosition(function(position) {
        				var pos1 = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-       				var pos2 = new google.maps.LatLng(position.coords.latitude+0.003000,position.coords.longitude+0.003000);
+       				var pos2 = new google.maps.LatLng(position.coords.latitude+3.003000,position.coords.longitude+3.003000);
 
        				var infowindow = new google.maps.InfoWindow({
          								map: map,position: pos1
