@@ -13,7 +13,7 @@ public class HomePageAction extends Action{
 	@Override
 	public String perform(HttpServletRequest request) {
 		// TODO Auto-generated method stub
-		return "home.jsp";
+		return "Homepage.jsp";
 	}
 
 }

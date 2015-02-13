@@ -24,5 +24,4 @@ public class WordCloudAction extends Action{
 			
 			return "GoogleCloud.jsp";
 		}
-
 }
