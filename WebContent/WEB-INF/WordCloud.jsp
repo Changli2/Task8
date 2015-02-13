@@ -21,15 +21,15 @@
         data.addColumn('string', 'URL');
         data.addRows(6);
         data.setCell(0, 0, 'Aayush');
-        data.setCell(0, 1, 'http://www.youtube.com/results?search_query=brazil+fifa+world+cup');
+        data.setCell(0, 1, 'http://localhost:8080/Task8/wordCloud.do');
         data.setCell(1, 0, 'Thomas');
-        data.setCell(1, 1, 'http://www.youtube.com/results?search_query=italy+fifa+world+cup');
+        data.setCell(1, 1, 'http://localhost:8080/Task8/wordCloud.do');
         data.setCell(2, 0, 'Sthepanie');
-        data.setCell(2, 1, 'http://www.youtube.com/results?search_query=germany+fifa+world+cup');
+        data.setCell(2, 1, 'http://localhost:8080/Task8/wordCloud.do');
         data.setCell(3, 0, 'Chang');
-        data.setCell(3, 1, 'http://www.youtube.com/results?search_query=argentina+fifa+world+cup');
+        data.setCell(3, 1, 'http://localhost:8080/Task8/wordCloud.do');
         data.setCell(4, 0, 'Ahmad');
-        data.setCell(4, 1, 'http://www.youtube.com/results?search_query=uruguay+fifa+world+cup');
+        data.setCell(4, 1, 'http://localhost:8080/Task8/wordCloud.do');
         
         var runIt = getLocation();
   	  
@@ -44,7 +44,7 @@
     	function showPosition(position){ 
     		var text = position.coords.latitude + "/" + position.coords.longitude;
     		data.setCell(5, 0, 'Your location: ' + text);
-            data.setCell(5, 1, 'http://www.youtube.com/results?search_query=uruguay+fifa+world+cup');
+            data.setCell(5, 1, 'http://localhost:8080/Task8/wordCloud.do');
             /* alert(text); */
             
          // Instantiate our table object.
@@ -58,7 +58,7 @@
   </head>
 
   <body>
-        <big>FIFA World Cup: Country appearances in the final four</big>
+        <big>Top Ten Trending Tweets</big>
         <div> </div>
         <div id="mydiv"></div>
         

@@ -2,16 +2,16 @@ package controller;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class WordCloudAction extends Action{ 
+public class MapKMLAction extends Action{ 
 		
 		public String getName() {
 			// TODO Auto-generated method stub
-			return "googleCloud.do";
+			return "mapKML.do";
 		}
 
 		@Override
 		public String perform(HttpServletRequest request) {
-			return "GoogleCloud.jsp";
+			return "MapKML.jsp";
 		}
 
 }
