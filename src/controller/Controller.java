@@ -28,6 +28,8 @@ public class Controller extends HttpServlet{
 		Action.add(new GeoMapAction());
 		Action.add(new GoogleChartAction());
 		Action.add(new WordCloudAction());
+		Action.add(new UploadAction());
+
 	}
 
 	@Override

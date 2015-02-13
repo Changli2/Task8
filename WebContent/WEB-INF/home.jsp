@@ -77,9 +77,16 @@ box-shadow: 0px 2px 2px #606366;
 	</div>
 	<!-- /.container-fluid --> </nav>
 	<!-- Header ends -->
+	<br>
+		<br>
+			<br>
+	
+	<a href="upload.do">upload</a>
 	<div style="position: absolute; left: 500px; top: 100px;">	
 		<a href="https://twitter.com/intent/tweet?button_hashtag=MavenTrends&text=Wow!%20I%20found%20the%20trending%20topic%20near%20my%20place." class="twitter-hashtag-button" data-size="large">Tweet #MavenTrends</a>
 		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 	</div>
+	
+	
 </body>
 </html>
