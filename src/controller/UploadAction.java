@@ -42,8 +42,12 @@ public class UploadAction extends Action {
 			List<FlickrPhoto> photos = new ArrayList<FlickrPhoto>();
 			String callTest = "https://api.flickr.com/services/rest/?method=flickr.tags.getClusterPhotos&api_key=d3803ebdf492372803328824620ab1d7&tag=BMW&cluster_id=car&format=rest&auth_token=72157650365512169-6655b6404f6f0cc7&api_sig=21fc5966999b117d0bf098de29936d1d";
 			String uploadurl = "https://up.flickr.com/services/upload/&api_key=d3803ebdf492372803328824620ab1d7&auth_token=72157650365512169-6655b6404f6f0cc7&api_sig=21fc5966999b117d0bf098de29936d1d";
-			String searchurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d237da9ec0636440997bacda66e0ef9f&tags="
+			String searchurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1c3e423fa49c61f7a76964f5f667da97&tags="
 					+ request.getParameter("keyword") + "&format=rest";
+			
+			/*String searchurl = "https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=1c3e423fa49c61f7a76964f5f667da97&tags="
+					+ request.getParameter("keyword")
+					+ "&format=rest&api_sig=009bb81a236ff6fe2ec774c62ce58560";*/
 			
 			URL myURL = new URL(searchurl);
 
