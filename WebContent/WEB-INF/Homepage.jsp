@@ -49,93 +49,100 @@
    			// Try HTML5 geolocation
    			if(navigator.geolocation) {
      			navigator.geolocation.getCurrentPosition(function(position) {
-       				var pos1 = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
+       				var uLocate = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
        				/* var pos2 = new google.maps.LatLng(position.coords.latitude+0.003000,position.coords.longitude+0.003000); */
 
        				
 			var infowindow = new google.maps.InfoWindow(
 											{
 												map : map,
-												position : pos1,
-												content : '<a href="googleCloud.do">'
-														+ 'Click here to start the fun or click anywhere else in the map'
-														+ '</a>'
-											});
+												position : uLocate,
+												content : '<a href="googleCloud.do?lat='
+													+ uLocate.lat()
+													+ '&lng='
+													+ uLocate.lng()
+													+ '">'
+													+ 'Click here to start the fun or click anywhere else in the map'
+													+ '</a>'
+										});
 
-									/* var infowindow = new google.maps.InfoWindow({
-										map: map,position: pos2
-										   ,content: 'Nearest Location'
-									}); */
+								/* var infowindow = new google.maps.InfoWindow({
+									map: map,position: pos2
+									   ,content: 'Nearest Location'
+								}); */
 
-									map.setCenter(pos1);
-									
-									// Create the DIV to hold the control and
-									// call the CenterControl() constructor passing
-									// in this DIV.
-									var centerControlDiv = document.createElement('div');
-									var centerControl = new CenterControl(centerControlDiv, map, pos1);
+								map.setCenter(uLocate);
 
-									centerControlDiv.index = 1;
-									map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(centerControlDiv);
-								}, function() {
-									handleNoGeolocation(true);
-								});
-			} else {
-				// Browser doesn't support Geolocation
-				handleNoGeolocation(false);
-			}
+								// Create the DIV to hold the control and
+								// call the CenterControl() constructor passing
+								// in this DIV.
+								var centerControlDiv = document
+										.createElement('div');
+								var centerControl = new CenterControl(
+										centerControlDiv, map, uLocate);
 
-			google.maps.event.addListener(map, 'click', function(e) {
-				placeMarker(e.latLng, map);
-			});
+								centerControlDiv.index = 1;
+								map.controls[google.maps.ControlPosition.RIGHT_BOTTOM]
+										.push(centerControlDiv);
+							}, function() {
+								handleNoGeolocation(true);
+							});
+		} else {
+			// Browser doesn't support Geolocation
+			handleNoGeolocation(false);
 		}
 
-		function handleNoGeolocation(errorFlag) {
-			if (errorFlag) {
-				var content = 'We apologized, we cannot locate your current location';
-			} else {
-				var content = 'Your browser doesn\'t support geolocation.';
-			}
+		google.maps.event.addListener(map, 'click', function(e) {
+			placeMarker(e.latLng, map);
+		});
+	}
 
-			var options = {
-				map : map,
-				position : new google.maps.LatLng(60, 105),
-				content : content
-			};
-
-			var infowindow = new google.maps.InfoWindow(options);
-			map.setCenter(options.position);
+	function handleNoGeolocation(errorFlag) {
+		if (errorFlag) {
+			var content = 'We apologized, we cannot locate your current location';
+		} else {
+			var content = 'Your browser doesn\'t support geolocation.';
 		}
 
-		function placeMarker(position, map) {
-			/* var marker = new google.maps.Marker({
-			  position: position,
-			  map: map
-			}); */
+		var options = {
+			map : map,
+			position : new google.maps.LatLng(60, 105),
+			content : content
+		};
 
-			/* var infowindow = new google.maps.InfoWindow(
-					{
-						map : map,
-						position : position,
-						content : '<a href="googleCloud.do">'
-								+ 'Click here to start the fun or click other location in the map'
-								+ '</a>'
-					}); */
-			
-			var infowindow = new google.maps.InfoWindow(
-					{
-						map : map,
-						position : position,
-						content : '<a href="googleCloud.do">'
-								+ 'New Coordinate: '+ position.lat()
-								+ ' & ' + position.lng() + '</a>'
-					});
-			
-			/* map.panTo(position); */
-		}
+		var infowindow = new google.maps.InfoWindow(options);
+		map.setCenter(options.position);
+	}
 
-		google.maps.event.addDomListener(window, 'load', initialize);
-	</script>
+	function placeMarker(position, map) {
+		/* var marker = new google.maps.Marker({
+		  position: position,
+		  map: map
+		}); */
+
+		var infowindow = new google.maps.InfoWindow({
+			map : map,
+			position : position,
+			content : '<a href="googleCloud.do?lat=' + position.lat() + '&lng='
+					+ position.lng() + '">'
+					+ 'Want to see what is the trend around this place?'
+					+ '</a>'
+		});
+
+		/* var infowindow = new google.maps.InfoWindow(
+				{
+					map : map,
+					position : position,
+					content : '<a href="googleCloud.do">'
+							+ 'New Coordinate: '+ position.lat()
+							+ ' & ' + position.lng() + '</a>'
+				}); */
+
+		/* map.panTo(position); */
+	}
+
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script>
 <div id="appcontent">
 	<div id="map-canvas"></div>
 </div>
