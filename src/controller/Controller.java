@@ -29,10 +29,6 @@ public class Controller extends HttpServlet{
 		Action.add(new GoogleChartAction());
 		Action.add(new WordCloudAction());
 		Action.add(new UploadAction());
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 		Action.add(new MapKMLAction());
 
 	}
