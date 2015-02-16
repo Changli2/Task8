@@ -15,7 +15,7 @@ public class WordCloudAction extends Action{
 
 		@Override
 		public String perform(HttpServletRequest request) {
-			
+		
 			String lat= request.getParameter("lat");
 			String lang= request.getParameter("lng");
 			
@@ -23,7 +23,7 @@ public class WordCloudAction extends Action{
 			String woeid= yahooid.getWoeid(lat, lang);
 			
 			ArrayList<String> trends =  GetHotTrends.getPopTrends(woeid);
-			
+		
 			request.setAttribute("num", trends.size());
 			
 			request.setAttribute("twitTrends", trends);
