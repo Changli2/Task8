@@ -52,7 +52,7 @@ public class LocationDAO extends GenericDAO<Location>{
 			return null;
 		}
 		Arrays.sort(loc,comparePriceDSC);
-		Location[] newLoc= new Location[10];
+		Location[] newLoc= new Location[loc.length];
 		for(int i=0; i<loc.length; i++) {
 			System.out.println(loc[i]);
 			newLoc[i]=loc[i];
