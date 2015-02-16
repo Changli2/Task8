@@ -65,8 +65,13 @@ public class GetHotTrends {
 				//System.out.println(response.getCode());
 				//System.out.println(response.getBody());
 				str = response.getBody();
-				parseJson(str, result);
-			}
+				try {
+					parseJson(str, result);
+				} catch (JsonException e2) {
+					result.clear();
+					return result;
+				}
+			} 
 //			try (InputStream is = new ByteArrayInputStream(str.getBytes("UTF-8")); JsonReader rdr = Json.createReader(is)) {
 //				JsonArray results = rdr.readArray();
 //				JsonObject obj = results.getJsonObject(0);
