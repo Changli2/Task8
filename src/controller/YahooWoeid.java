@@ -24,9 +24,9 @@ public class YahooWoeid{
 		//https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text%3D%2240.4449596%2C-79.9484689%22%20and%20gflags%3D%22R%22&format=json&diagnostics=true&callback=
 		String temp="";
 		try {
-			
+			System.out.println("lat: "+lat+" "+lang);
 			String baseUrl = "https://query.yahooapis.com/v1/public/yql?q=";
-			String query1="select * from geo.placefinder where text="+lat+","+lang+" and gflags=\"R\"";
+			String query1="select * from geo.placefinder where text=\""+lat+","+lang+"\" and gflags=\"R\"";
 			String fullUrlStr1 = baseUrl + URLEncoder.encode(query1, "UTF-8")
 					+ "&format=json";
 			URL fullUrl1 = new URL(fullUrlStr1);

@@ -21,7 +21,7 @@ public class WordCloudAction extends Action{
 			
 			YahooWoeid yahooid= new YahooWoeid();
 			String woeid= yahooid.getWoeid(lat, lang);
-			
+			System.out.println("woeid"+ woeid);
 			ArrayList<String> trends =  GetHotTrends.getPopTrends(woeid);
 		
 			request.setAttribute("num", trends.size());

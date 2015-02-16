@@ -36,6 +36,7 @@ public class GetHotTrends {
 			Token accessToken = new Token(TwitterAuth.ACCESS_TOKEN, TwitterAuth.ACCESS_SECRET);
 
 			// Now let's go and ask for a protected resource!
+			System.out.println(id);
 			OAuthRequest request = new OAuthRequest(Verb.GET, link + id);
 			
 			//request.addQuerystringParameter("q", "%23Pittsburgh");
