@@ -62,7 +62,7 @@
         
         data.addRows([
 		<c:forEach var="trends" items="${twitTrends}">
-          ['${trends}', ${random.nextInt(10)}],
+          ['${trends}', ${random.nextInt(100)}],
         </c:forEach>
         ]);
 

@@ -89,15 +89,17 @@ body {
 	<div class="container-fluid">
 		<!--  Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header " style="color: blue;">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only"> Toggle navigation </span> <span
-					class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+				data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only"> Toggle navigation </span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span>
 			</button>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse">
+		<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse" 
+			id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a href="#about">About</a>
                     </li>
@@ -112,9 +114,10 @@ body {
                    </li>           
                 </ul>
         </div>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
-				<li><a id="logo-outer" href="homePage.do"><img alt="logo" id="logo" src="img/logo.png"></a>
+				<li>
+					<a id="logo-outer" href="homePage.do"><img alt="logo" id="logo" src="img/logo.png"></a>
 				</li>
 			</ul>
 		</div>
