@@ -30,6 +30,7 @@ public class WordCloudAction extends Action{
 			
 			String lat= request.getParameter("lat");
 			String lang= request.getParameter("lng");
+
 			try {
 				YahooWoeid yahooid= new YahooWoeid();
 				String city= yahooid.getCity(lat, lang);
@@ -66,7 +67,7 @@ public class WordCloudAction extends Action{
 			} catch(RollbackException e) {
 				errors.add(e.getMessage());
 				return "createFund.jsp";
-				
+			
 			}
 		}
 }

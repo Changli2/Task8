@@ -46,18 +46,35 @@ body {
 	box-shadow: 0px 2px 2px #606366;
 }
 
-#appcontent {
-    width: 100%;
-    height: 100%;
+#cloudContent {
+	width: 100%;
+	height: 100%;
+}
+
+#appContent {
+	float:right;
+    width: 50%;
+    height: 90%;   
+    padding: 1%;
+    background-color: #eeeeee;
 }
 
 
 #map-canvas {
-    position: absolute;
-    top: 70px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
+    position: relative;
+	overflow: hidden;
+	transform: translateZ(0px);
+	background-color: rgb(229, 227, 223);
+	width: 100%;
+	height: 100%;	
+}
+
+#map-cloud {
+	position: relative;
+	overflow: hidden;
+	transform: translateZ(0px);
+	width: 100%;
+	height: 100%;
 }
 
  h1, h2, h3, h4, h5, h6 {
