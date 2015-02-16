@@ -16,7 +16,7 @@ public class WordCloudAction extends Action{
 		@Override
 		public String perform(HttpServletRequest request) {
 			
-			ArrayList<String> trends =  GetHotTrends.getPopTrends("1");
+			ArrayList<String> trends =  GetHotTrends.getPopTrends("2473224");
 			
 			request.setAttribute("num", trends.size());
 			
