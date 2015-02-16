@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import javax.json.Json;
 import javax.json.JsonArray;
+import javax.json.JsonException;
 import javax.json.JsonObject;
 import javax.json.JsonReader;
 
@@ -48,6 +49,52 @@ public class GetHotTrends {
 			//System.out.println(response.getBody());
 			String str = response.getBody();
 			
+			try {
+				parseJson(str, result);
+			} catch (JsonException e) {
+				result.clear();
+				accessToken = new Token(TwitterAuth.ACCESS_TOKEN, TwitterAuth.ACCESS_SECRET);
+
+				request = new OAuthRequest(Verb.GET, link + 2473224);
+				
+				//request.addQuerystringParameter("q", "%23Pittsburgh");
+				//request.addQuerystringParameter("count", "300");
+//				request.addQuerystringParameter("lang", "en");
+				service.signRequest(accessToken, request);
+				response = request.send();
+				//System.out.println(response.getCode());
+				//System.out.println(response.getBody());
+				str = response.getBody();
+				parseJson(str, result);
+			}
+//			try (InputStream is = new ByteArrayInputStream(str.getBytes("UTF-8")); JsonReader rdr = Json.createReader(is)) {
+//				JsonArray results = rdr.readArray();
+//				JsonObject obj = results.getJsonObject(0);
+//				JsonArray res2 = obj.getJsonArray("trends");
+//				int i = 0;
+//				for (JsonObject jObj : res2.getValuesAs(JsonObject.class)) {
+//					i++;
+//					result.add(sanitize(jObj.getString("name")));
+//					//System.out.println(jObj.getString("name"));
+//					if (i == 10) {
+//						break;
+//					}
+//				}
+//			} catch (UnsupportedEncodingException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			} catch (JsonException e) {
+//				
+//			}
+			
+			
+			return result;
+		}
+		
+		private static void parseJson (String str, ArrayList<String> result) {
 			try (InputStream is = new ByteArrayInputStream(str.getBytes("UTF-8")); JsonReader rdr = Json.createReader(is)) {
 				JsonArray results = rdr.readArray();
 				JsonObject obj = results.getJsonObject(0);
@@ -67,10 +114,7 @@ public class GetHotTrends {
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
-			
-			
-			return result;
+			} 
 		}
 		
 		public static String sanitize(String s) {
