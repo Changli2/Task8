@@ -26,7 +26,7 @@
         </c:forEach>
         
      	// Instantiate our table object.
-        var vis = new gviz_word_cumulus.WordCumulus(document.getElementById('mydiv'));
+        var vis = new gviz_word_cumulus.WordCumulus(document.getElementById('map-cloud'));
 
         // Draw our table with the data we created locally.
         vis.draw(data, {text_color: '#03070b', speed: 25, width:window.innerWidth, height:window.innerHeight});
@@ -38,8 +38,8 @@
    	<h1>Top ${num} Trending Tweets</h1>
    </div>
    
-   <div id="appcontent">    	
-   		<div style="position: absolute;top: 80px;left: 0px;right: 0px;bottom: 0px;" id="mydiv"></div>
+   <div id="cloudContent">    	
+   		<div id="map-cloud"></div>
    </div>
    
    <script type="text/javascript">
@@ -80,6 +80,45 @@
    		<h1>Top ${num} Trending Tweets Chart</h1>
    	</div>
     
-    <div style="width: 100%; height: 500px;" id="chart_div"></div>        
+    <div style="width: 100%; height: 500px;" id="chart_div"></div>
+
+	<script type="text/javascript"
+		src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['corechart']}]}">
+	</script>
+	<script type="text/javascript">
+		google.load('visualization', '1', {packages: ['corechart']});
+	    google.setOnLoadCallback(drawChart);
+	    
+	    var w = window.innerWidth;
+	
+	    function drawChart() {
+	
+	      var data = google.visualization.arrayToDataTable([
+	        ['Keyword','Number of Response'],
+	        <c:forEach var="trends" items="${twitTrends}">
+	          ['${trends}', ${random.nextInt(100)}],
+	        </c:forEach>
+	      ]);
+	
+	      var options = {
+	        title: '',
+	        width: w,
+	        height: 563,
+	        hAxis: {
+	          title: 'Number of Response',
+	          minValue: 0
+	        },
+	        vAxis: {
+	          title: 'Keyword'
+	        }
+	      };
+	
+	      var chart = new google.visualization.BarChart(
+	        document.getElementById('ex0'));
+	
+	      chart.draw(data, options);
+	    }
+    </script>
+    <div id="ex0"></div>
 
 <jsp:include page="Footer.jsp"></jsp:include>

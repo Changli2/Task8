@@ -27,7 +27,7 @@ public class WordCloudAction extends Action{
 				request.setAttribute("twitTrends", trends);
 			} else {
 				request.setAttribute("num", 0);				
-				request.setAttribute("twitTrends", "We are sorry, please try again");
+				request.setAttribute("twitTrends", "We are sorry please try again");
 			}
 			
 			return "GoogleCloud.jsp";

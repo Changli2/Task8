@@ -16,6 +16,7 @@
  			  controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
  			  controlUI.style.cursor = 'pointer';
  			  controlUI.style.marginBottom = '22px';
+ 			  controlUI.style.marginRight = '5px';
  			  controlUI.style.textAlign = 'center';
  			  controlUI.title = 'Click to recenter the map';
  			  controlDiv.appendChild(controlUI);
@@ -60,7 +61,7 @@
 													+ '&lng='
 													+ uLocate.lng()
 													+ '">'
-													+ 'Click here to start the fun or click anywhere else in the map'
+													+ 'Click here to start finding top tweets or click anywhere in the map'
 													+ '</a>'
 										});
 
@@ -113,35 +114,19 @@
 	}
 
 	function placeMarker(position, map) {
-		/* var marker = new google.maps.Marker({
-		  position: position,
-		  map: map
-		}); */
-
 		var infowindow = new google.maps.InfoWindow({
 			map : map,
 			position : position,
 			content : '<a href="googleCloud.do?lat=' + position.lat() + '&lng='
 					+ position.lng() + '">'
-					+ 'Want to see what is the trend around this place?'
+					+ 'Want to see top twitter trends around this place?'
 					+ '</a>'
 		});
-
-		/* var infowindow = new google.maps.InfoWindow(
-				{
-					map : map,
-					position : position,
-					content : '<a href="googleCloud.do">'
-							+ 'New Coordinate: '+ position.lat()
-							+ ' & ' + position.lng() + '</a>'
-				}); */
-
-		/* map.panTo(position); */
 	}
 
 	google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-<div id="appcontent">
+<div id="appContent">
 	<div id="map-canvas"></div>
 </div>
 
