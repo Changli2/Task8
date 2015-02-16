@@ -4,11 +4,11 @@ import org.genericdao.PrimaryKey;
 
 @PrimaryKey("locId")
 public class Location {
-	private String locId;
+	private int locId;
 	private String locName;
 	private int count;
 	
-	public String getLocId() {
+	public int getLocId() {
 		return this.locId;
 	}
 	
@@ -20,7 +20,7 @@ public class Location {
 		return this.count;
 	}
 	
-	public void setLocId(String aLocId) {
+	public void setLocId(int aLocId) {
 		this.locId = aLocId;
 	}
 	

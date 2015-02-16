@@ -9,7 +9,7 @@ import org.genericdao.DAOException;
 public class Model {
 	private UserDAO userDAO;
 	private CommentDAO commentDAO;	
-	
+	private LocationDAO locationDAO;
 
 
 	public Model(ServletConfig config) throws ServletException {		
@@ -21,9 +21,11 @@ public class Model {
 			
 			String userTbl = "team8_user";
 			String commentTbl = "team8_comment";
+			String locationtbl= "team8_location";
 			
 			userDAO = new UserDAO(cp, userTbl);
-			commentDAO = new CommentDAO(cp, commentTbl);			
+			commentDAO = new CommentDAO(cp, commentTbl);
+			locationDAO = new LocationDAO(cp, locationtbl);
 
 			
 		} catch (DAOException e) {
@@ -33,4 +35,5 @@ public class Model {
 	
 	public UserDAO getEmployeeDAO()  { return userDAO; }
 	public CommentDAO getCustomerDAO()  { return commentDAO; }
+	public LocationDAO getLocationDAO() { return locationDAO; }
 }

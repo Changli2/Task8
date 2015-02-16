@@ -52,6 +52,7 @@ public class GetHotTrends {
 			try {
 				parseJson(str, result);
 			} catch (JsonException e) {
+				System.out.println("inside catch");
 				result.clear();
 				accessToken = new Token(TwitterAuth.ACCESS_TOKEN, TwitterAuth.ACCESS_SECRET);
 

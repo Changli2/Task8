@@ -27,7 +27,7 @@ public class Controller extends HttpServlet{
 		Action.add(new HomePageAction());
 		Action.add(new GeoMapAction());
 		Action.add(new GoogleChartAction());
-		Action.add(new WordCloudAction());
+		Action.add(new WordCloudAction(model));
 		Action.add(new UploadAction());
 		Action.add(new MapKMLAction());
 

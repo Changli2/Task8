@@ -1,19 +1,13 @@
 package controller;
 
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
-import java.util.*;
 
-import javax.json.*;
-import javax.servlet.http.HttpServletRequest;
-
-import org.json.JSONObject;
-import org.json.JSONTokener;
+import javax.json.Json;
+import javax.json.JsonObject;
+import javax.json.JsonReader;
 
 public class YahooWoeid{
 
@@ -23,6 +17,7 @@ public class YahooWoeid{
 		//select * from geo.placefinder where text="40.4449596,-79.9484689" and gflags="R"
 		//https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20geo.placefinder%20where%20text%3D%2240.4449596%2C-79.9484689%22%20and%20gflags%3D%22R%22&format=json&diagnostics=true&callback=
 		String temp="";
+		String city="";
 		try {
 			System.out.println("lat: "+lat+" "+lang);
 			String baseUrl = "https://query.yahooapis.com/v1/public/yql?q=";
@@ -34,6 +29,8 @@ public class YahooWoeid{
 			try (InputStream is1 = fullUrl1.openStream(); JsonReader rdr1 = Json.createReader(is1)) {
 				JsonObject results1 = rdr1.readObject().getJsonObject("query").getJsonObject("results").getJsonObject("Result");
 				temp1 = results1.getString("woeid");
+				city= results1.getString("city");
+				
 				System.out.println(temp1);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
@@ -57,5 +54,28 @@ public class YahooWoeid{
 		return temp;
 	}
 
-	
+	public String getCity(String lat, String lang) {
+		String city="";
+		try {
+			System.out.println("lat: "+lat+" "+lang);
+			String baseUrl = "https://query.yahooapis.com/v1/public/yql?q=";
+			String query1="select * from geo.placefinder where text=\""+lat+","+lang+"\" and gflags=\"R\"";
+			String fullUrlStr1 = baseUrl + URLEncoder.encode(query1, "UTF-8")
+					+ "&format=json";
+			URL fullUrl1 = new URL(fullUrlStr1);
+			try (InputStream is1 = fullUrl1.openStream(); JsonReader rdr1 = Json.createReader(is1)) {
+				JsonObject results1 = rdr1.readObject().getJsonObject("query").getJsonObject("results").getJsonObject("Result");
+				
+				city= results1.getString("city");
+				
+				System.out.println(city);
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return city;
+	}
 }
