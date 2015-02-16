@@ -9,11 +9,9 @@ import twitterAPI.*;
 public class WordCloudAction extends Action{ 
 		
 		public String getName() {
-			// TODO Auto-generated method stub
 			return "googleCloud.do";
 		}
 
-		@Override
 		public String perform(HttpServletRequest request) {
 		
 			String lat= request.getParameter("lat");
@@ -23,10 +21,14 @@ public class WordCloudAction extends Action{
 			String woeid= yahooid.getWoeid(lat, lang);
 			System.out.println("woeid"+ woeid);
 			ArrayList<String> trends =  GetHotTrends.getPopTrends(woeid);
-		
-			request.setAttribute("num", trends.size());
 			
-			request.setAttribute("twitTrends", trends);
+			if (trends.size()>1){
+				request.setAttribute("num", trends.size());				
+				request.setAttribute("twitTrends", trends);
+			} else {
+				request.setAttribute("num", 0);				
+				request.setAttribute("twitTrends", "We are sorry, please try again");
+			}
 			
 			return "GoogleCloud.jsp";
 		}
