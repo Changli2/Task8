@@ -10,7 +10,7 @@
 
  			  // Set CSS for the control border
  			  var controlUI = document.createElement('div');
- 			  controlUI.style.backgroundColor = '#fff';
+ 			  controlUI.style.backgroundColor = '#eeeeee';
  			  controlUI.style.border = '2px solid #fff';
  			  controlUI.style.borderRadius = '3px';
  			  controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)';
@@ -28,7 +28,7 @@
  			  controlText.style.lineHeight = '38px';
  			  controlText.style.paddingLeft = '5px';
  			  controlText.style.paddingRight = '5px';
- 			  controlText.innerHTML = 'Your Location';
+ 			  controlText.innerHTML = 'My Location';
  			  controlUI.appendChild(controlText);
 
  			  // Setup the click event listeners: simply set the map to user location
@@ -40,7 +40,7 @@
 
 		function initialize() {
    			var mapOptions = {
-     			zoom: 15,
+     			zoom: 8,
      			disableDefaultUI: true
    			};
    			
@@ -50,8 +50,6 @@
    			if(navigator.geolocation) {
      			navigator.geolocation.getCurrentPosition(function(position) {
        				var uLocate = new google.maps.LatLng(position.coords.latitude,position.coords.longitude);
-       				/* var pos2 = new google.maps.LatLng(position.coords.latitude+0.003000,position.coords.longitude+0.003000); */
-
        				
 			var infowindow = new google.maps.InfoWindow(
 											{
