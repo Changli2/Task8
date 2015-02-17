@@ -1,7 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <jsp:include page="Header.jsp"></jsp:include>
-
+<style>
+#twitterbutton {
+display:none;
+}
+</style>
 <script>
  
  		var map;
@@ -126,8 +130,57 @@
 
 	google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-<div id="appContent">
-	<div id="map-canvas"></div>
-</div>
+   	
+	<div id="appContent">
+		<div class="page-header" id="map-title">
+   			<h1>Click on the map</h1>
+   		</div>
+		<div id="map-canvas"></div>
+	</div>
+    
+    <div id="analyticsContent">
+    	<div class="page-header" id="chart-title">
+   		<h1>Top ${num} Trending Tweets Chart</h1>
+   	</div>
+    	<div id="map-chart"></div>
+    </div>
+    
+    <script type="text/javascript">
+		google.load('visualization', '1.0', {'packages':['corechart']});
+	    google.setOnLoadCallback(drawChart);
+	    
+	    var w= document.getElementById('analyticsContent').clientWidth;
+	    var h = document.getElementById('analyticsContent').clientHeight 
+	    	- document.getElementById('chart-title').offsetHeight;
+	    
+	    console.log(w);
+	    console.log(h);
+	
+	    function drawChart() {
+	
+	      var data = google.visualization.arrayToDataTable([
+	        ['City','Number of Search'],
+	        <c:forEach var="city" items="${topten}">
+	          ['${city.locName}', ${city.count}],
+	        </c:forEach>
+	      ]);
+	
+	      var options = {
+	        title: '',
+	        hAxis: {
+	          title: 'Number of Clicks',
+	          minValue: 0
+	        },
+	        vAxis: {
+	          title: 'City'
+	        },
+	        is3D: true
+	      };
+	
+	      var chart = new google.visualization.BarChart(document.getElementById('map-chart'));
+	
+	      chart.draw(data, options);
+	    }
+    </script>
 
 <jsp:include page="Footer.jsp"></jsp:include>

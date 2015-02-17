@@ -2,15 +2,42 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="Header.jsp"></jsp:include>
 
-<style>
-h1, h2, h3, h4, h5, h6 {
-	margin-top:0;
-	font-family: 'Source Sans Pro', sans-serif;
-	text-transform:uppercase;
-	font-weight:400;
-	color:#e2284d;
-}</style>
-<div class="col-md-6 column">
+<div class="col-md-6 column" style="height:100%;">
+<script type="text/javascript">
+      google.load("visualization", "1");
+
+      // Set callback to run when API is loaded
+      google.setOnLoadCallback(drawVisualization);
+
+      // Called when the Visualization API is loaded.
+      function drawVisualization() {
+
+        // Create and populate a data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Tag');
+        data.addColumn('string', 'URL');
+        data.addRows(${num});
+        <c:set var="rowNum" value="${0}"/> 
+        <c:forEach var="trends" items="${twitTrends}">
+        	data.setCell(${rowNum}, 0, '${trends}');
+        	<c:set var="url" value="http://localhost:8080/Task8/upload.do?keyword=${trends}|${woeid}"/>
+        	data.setCell(${rowNum}, 1, '${url}');
+        	<c:set var="rowNum" value="${rowNum + 1}"/>
+        </c:forEach>
+        
+     	// Instantiate our table object.
+        var vis = new gviz_word_cumulus.WordCumulus(document.getElementById('map-cloud'));
+
+        // Draw our table with the data we created locally.
+        vis.draw(data, {text_color: '#03070b', speed: 15, width:window.innerWidth, height:window.innerHeight});
+               
+     }
+   </script>
+   
+   <div id="cloudContent">    	
+   		<div id="map-cloud"></div>
+   </div>
+>>>>>>> FETCH_HEAD
 </div>
 <div class="col-md-6 column">
 
@@ -49,37 +76,27 @@ h1, h2, h3, h4, h5, h6 {
         </div>
     </div>
 </div>
-```
-
-Include the following scripts at the bottom of the body of your webpage:
-
-```html
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 <script src="js/bootstrap-image-gallery.min.js"></script>
-```
-
-Create a list of links to image files with the attribute **data-gallery** (optionally with enclosed thumbnails) and add them to the body of your webpage:
-
-```html
 <div id="links">
 
 <c:forEach var="photos" items="${photos}">
-	<a href="${photos}" title="Banana" data-gallery>
+	<a href="${photos}" title="" data-gallery>
         <img src="${photos.thumbnail()}" alt="Banana">
     </a>
 </c:forEach>
 
 
-    <a href="https://farm3.staticflickr.com/2634/4046568058_0d7cffe35d.jpg" title="Banana" data-gallery>
+    <!-- <a href="https://farm3.staticflickr.com/2634/4046568058_0d7cffe35d.jpg" title="" data-gallery>
         <img src="https://farm3.staticflickr.com/2634/4046568058_0d7cffe35d.jpg" alt="Banana">
     </a>
     <a href="images/apple.jpg" title="Apple" data-gallery>
         <img src="images/thumbnails/apple.jpg" alt="Apple">
     </a>
     <a href="images/orange.jpg" title="Orange" data-gallery>
-        <img src="images/thumbnails/orange.jpg" alt="Orange">
-    </a>
+        <img src="images/thumbnails/orange.jpg" alt="Orange"> 
+    </a>-->
 </div>
 </div>
 <!-- <p>  example</p>

@@ -23,7 +23,7 @@
 <!-- Javascript APIs -->
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
 <script type="text/javascript" src="http://www.google.com/jsapi"></script>
-<script type="text/javascript" src="http://word-cumulus-goog-vis.googlecode.com/svn/trunk/wordcumulus.js"></script>
+<script type="text/javascript" src="js/wordcumulus.js"></script>
 <script type="text/javascript" src="http://word-cumulus-goog-vis.googlecode.com/svn/trunk/swfobject.js"></script>
 
 <style>
@@ -35,7 +35,7 @@ html, body {
 }
 
 body {
-	background: url('img/background1.jpg');
+	background: url('img/page_bg.jpg');
 	background-attachment: fixed;
 	margin: 0;
 	background-size: cover;
@@ -57,13 +57,19 @@ body {
 }
 
 #appContent {
-	float:right;
+	float: left;
     width: 50%;
     height: 90%;   
-    padding: 1%;
+    padding-right: 1%;
     background-color: #eeeeee;
 }
 
+#analyticsContent {
+	float: right;
+    width: 50%;
+    height: 100%;
+    background-color: #eeeeee;
+}
 
 #map-canvas {
     position: relative;
@@ -80,6 +86,13 @@ body {
 	transform: translateZ(0px);
 	width: 100%;
 	height: 100%;
+}
+
+#map-chart {
+	position: relative;
+	overflow: hidden;
+	transform: translateZ(0px);
+	height:90%;
 }
 
  h1, h2, h3, h4, h5, h6 {
@@ -112,11 +125,7 @@ body {
                     </li>
                     <li><a href="#contact">Contact</a>
                     </li>
-                    <li><a href="logout.do">Logout</a>
-                   </li>
-                    <li><a href="Cus_ViewAccount.do">Hello, ${customer.firstName}
-					${customer.lastName}!</a>
-                   </li>           
+                              
                 </ul>
         </div>
 		<div class="collapse navbar-collapse">
@@ -129,7 +138,7 @@ body {
 </div>
 </nav>
 </div>
-<div style="position: absolute;left: 15px;top: 100px;z-index: 100">	
+<div id="twitterbutton" style="position: relative;left: 15px;top: 25px;z-index: 100;margin-right: 5%; float: right;">	
 			<a href="https://twitter.com/intent/tweet?button_hashtag=MavenTrends&text=Wow!%20I%20found%20the%20trending%20topic%20near%20my%20place." class="twitter-hashtag-button" data-size="large">Tweet #MavenTrends</a>
 				<script>
 					!function(d, s, id) {

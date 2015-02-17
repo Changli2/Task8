@@ -24,7 +24,7 @@ public class Controller extends HttpServlet{
 	public void init() throws ServletException {
 		Model model=  new Model(getServletConfig());
 		
-		Action.add(new HomePageAction());
+		Action.add(new HomePageAction(model));
 		Action.add(new GeoMapAction());
 		Action.add(new GoogleChartAction());
 		Action.add(new WordCloudAction(model));
