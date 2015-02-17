@@ -35,7 +35,7 @@ html, body {
 }
 
 body {
-	background: url('img/background1.jpg');
+	background: url('img/page_bg.jpg');
 	background-attachment: fixed;
 	margin: 0;
 	background-size: cover;

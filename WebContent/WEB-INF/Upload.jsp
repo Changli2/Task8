@@ -80,21 +80,21 @@
 <div id="links">
 
 <c:forEach var="photos" items="${photos}">
-	<a href="${photos}" title="Banana" data-gallery>
+	<a href="${photos}" title="" data-gallery>
         <img src="${photos.thumbnail()}" alt="Banana">
     </a>
 </c:forEach>
 
 
-    <a href="https://farm3.staticflickr.com/2634/4046568058_0d7cffe35d.jpg" title="Banana" data-gallery>
+    <!-- <a href="https://farm3.staticflickr.com/2634/4046568058_0d7cffe35d.jpg" title="" data-gallery>
         <img src="https://farm3.staticflickr.com/2634/4046568058_0d7cffe35d.jpg" alt="Banana">
     </a>
     <a href="images/apple.jpg" title="Apple" data-gallery>
         <img src="images/thumbnails/apple.jpg" alt="Apple">
     </a>
     <a href="images/orange.jpg" title="Orange" data-gallery>
-        <img src="images/thumbnails/orange.jpg" alt="Orange">
-    </a>
+        <img src="images/thumbnails/orange.jpg" alt="Orange"> 
+    </a>-->
 </div>
 <!-- <p>  example</p>
 <img src="https://farm3.staticflickr.com/2634/4046568058_0d7cffe35d.jpg"></img>
