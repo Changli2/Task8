@@ -134,7 +134,7 @@ display:none;
 
 	google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-   	
+   
 	<div id="appContent">
 		<div class="page-header" id="map-title">
 
