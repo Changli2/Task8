@@ -89,7 +89,7 @@
     </a>
 </c:forEach>
 <c:forEach var="tweet" items="${tweets}">
-	<p style="font-size:medium; color:red">
+	<p style="font-size:medium; color:grey">
 	${tweet} </br>
 	</p>
 </c:forEach>

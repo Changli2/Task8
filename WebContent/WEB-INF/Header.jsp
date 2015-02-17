@@ -151,7 +151,9 @@ body {
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li>
-					<a id="logo-outer" href="signIn.do"><h2>MAVEN TRENDS</h2></a>
+					<a id="logo-outer" href= "homePage.do"><h2>MAVEN TRENDS</h2></a>
+				</li>
+				<li><a id ="logo-outer"  href="signIn.do"><img alt="SignIn with Twitter" src="img/img/signIn.jpg"></a>
 				</li>
 			</ul>
 		</div>
