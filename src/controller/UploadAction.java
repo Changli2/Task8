@@ -148,7 +148,7 @@ public class UploadAction extends Action {
 
 			String par = request.getParameter("keyword");
 			String keyword = par.split("\\|")[0];
-			// String woeid = par.split("\\|")[1];
+			String woeid = par.split("\\|")[1];
 			keyword = keyword.replace(' ', '+');
 			System.out.println(keyword);
 
@@ -209,19 +209,19 @@ public class UploadAction extends Action {
 			in.close();
 			con.disconnect();
 
-			// request.setAttribute("woeid", woeid);
+			request.setAttribute("woeid", woeid);
 			request.setAttribute("keyword", keyword);
 			request.setAttribute("photos", photos);
 
-			// ArrayList<String> trends = GetHotTrends.getPopTrends(woeid);
-
-			/*
-			 * if (trends.size()>0){ request.setAttribute("num", trends.size());
-			 * request.setAttribute("twitTrends", trends); } else {
-			 * request.setAttribute("num", 0);
-			 * request.setAttribute("twitTrends",
-			 * "We are sorry please try again"); }
-			 */
+			ArrayList<String> trends =  GetHotTrends.getPopTrends(woeid);
+			
+			if (trends.size()>0){
+				request.setAttribute("num", trends.size());				
+				request.setAttribute("twitTrends", trends);
+			} else {
+				request.setAttribute("num", 0);				
+				request.setAttribute("twitTrends", "We are sorry please try again");
+			}
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

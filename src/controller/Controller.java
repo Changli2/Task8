@@ -32,7 +32,7 @@ public class Controller extends HttpServlet{
 		Action.add(new UploadAction());
 		Action.add(new MapKMLAction());
 		Action.add(new SigninAction());
-		Action.add(new getVerifyAction());
+		Action.add(new getVerifyAction(model));
 
 
 	}

@@ -2,6 +2,8 @@ package controller;
 
 import java.io.IOException;
 
+import model.Model;
+
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;

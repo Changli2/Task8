@@ -6,6 +6,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import model.LocationDAO;
+import model.Model;
+
 import org.genericdao.RollbackException;
 import org.scribe.builder.ServiceBuilder;
 import org.scribe.builder.api.Api;
@@ -17,13 +20,22 @@ import org.scribe.model.Verb;
 import org.scribe.model.Verifier;
 import org.scribe.oauth.OAuthService;
 
+import databean.Location;
+
 public class getVerifyAction extends Action{
+	private LocationDAO locationDAO;
 
 	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
 		return "getVerify.do";
 	}
+	
+	public getVerifyAction(Model model) {
+		// TODO Auto-generated constructor stub
+		locationDAO= model.getLocationDAO();
+	}
+
 
 	@Override
 	public String perform(HttpServletRequest request)  {
@@ -54,6 +66,14 @@ public class getVerifyAction extends Action{
 		System.out.println();
 
 		System.out.println(response.getBody());
+		
+		Location[] locs;
+		try {
+			locs = locationDAO.getTopTen();
+			request.setAttribute("topten", locs);
+		} catch (RollbackException e) {
+			e.printStackTrace();
+		}
 		
 		return "Homepage.jsp";
 	}

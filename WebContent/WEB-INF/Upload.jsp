@@ -29,7 +29,7 @@
         var vis = new gviz_word_cumulus.WordCumulus(document.getElementById('map-cloud'));
 
         // Draw our table with the data we created locally.
-        vis.draw(data, {text_color: '#03070b', speed: 15, width:window.innerWidth, height:window.innerHeight});
+        vis.draw(data, {text_color: '#f05032', speed: 15, width:window.innerWidth, height:window.innerHeight});
                
      }
    </script>
