@@ -45,7 +45,7 @@ display:none;
 
 		function initialize() {
    			var mapOptions = {
-     			zoom: 6,
+     			zoom: 8,
      			disableDefaultUI: true
    			};
    			
@@ -137,15 +137,17 @@ display:none;
    	
 	<div id="appContent">
 		<div class="page-header" id="map-title">
+
    			<h3>Click on the map</h3>
+
    		</div>
 		<div id="map-canvas"></div>
 	</div>
     
     <div id="analyticsContent">
     	<div class="page-header" id="chart-title">
-   		<h3>Most Searched Cities</h3>
-   	</div>
+   			<h3>Most Searched Cities</h3>
+   		</div>
     	<div id="map-chart"></div>
     </div>
     

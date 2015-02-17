@@ -88,6 +88,11 @@
         <img src="${photos.thumbnail()}" alt="Banana">
     </a>
 </c:forEach>
+<c:forEach var="tweet" items="${tweets}">
+	<p style="font-size:medium; color:red">
+	${tweet} </br>
+	</p>
+</c:forEach>
 
 
     <!-- <a href="https://farm3.staticflickr.com/2634/4046568058_0d7cffe35d.jpg" title="" data-gallery>
