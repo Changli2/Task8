@@ -124,6 +124,19 @@ public class GetHotTrends {
 			} 
 		}
 		
+		private static void parseTweetJson (String str, ArrayList<String> result) {
+			try (InputStream is = new ByteArrayInputStream(
+					str.getBytes("UTF-8"));
+					JsonReader rdr = Json.createReader(is)) {
+				JsonArray results = rdr.readObject().getJsonArray("statuses");
+				for (JsonObject individualTweet : results.getValuesAs(JsonObject.class)) {
+					result.add(sanitize(individualTweet.getString("text")));
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
 		public static String sanitize(String s) {
 	    	return s.replace("&", "&amp;").replace("<","&lt;").replace(">","&gt;").replace("\"","&quot;").replace("\'","").replace("#","");
 		}
