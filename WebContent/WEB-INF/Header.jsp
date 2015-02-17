@@ -6,8 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-<meta charset="utf-8">
 <title>Maven Trends</title>
+
 <link rel="stylesheet" href="css/font-awesome.min.css" />
 <link rel="stylesheet" href="css/bootstrap-responsive.min.css" class="cssdeck">
 <link rel="stylesheet" href="css/bootstrapValidator.min.css" />
@@ -17,8 +17,8 @@
 <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
 <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
-
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 <!-- Javascript APIs -->
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
@@ -122,8 +122,7 @@ body {
 	<div class="container-fluid">
 		<!--  Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header " style="color: blue;">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
-				data-target="#bs-example-navbar-collapse-1">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 				<span class="sr-only"> Toggle navigation </span> 
 				<span class="icon-bar"></span> 
 				<span class="icon-bar"></span> 
@@ -131,8 +130,7 @@ body {
 			</button>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse" 
-			id="bs-example-navbar-collapse-1">
+		<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse" >
                 <ul class="nav navbar-nav">
                     <li><a href="#about">About</a>
                     </li>
@@ -143,7 +141,7 @@ body {
                               
                 </ul>
         </div>
-		<div class="collapse navbar-collapse">
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
 				<li>
 					<a id="logo-outer" href="homePage.do"><h2>MAVEN TRENDS</h2></a>

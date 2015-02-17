@@ -102,14 +102,18 @@ display:none;
 
 	function handleNoGeolocation(errorFlag) {
 		if (errorFlag) {
-			var content = 'We apologized, we cannot locate your current location';
+			var content = '<a href="googleCloud.do?lat=40.4566772'
+				+ '&lng=-79.93560780000001'
+				+ '">'
+				+ 'Click here to start finding top tweets or click anywhere in the map'
+				+ '</a>'
 		} else {
 			var content = 'Your browser doesn\'t support geolocation.';
 		}
 
 		var options = {
 			map : map,
-			position : new google.maps.LatLng(60, 105),
+			position : new google.maps.LatLng(40.4566772, -79.93560780000001),
 			content : content
 		};
 
@@ -121,8 +125,8 @@ display:none;
 		var infowindow = new google.maps.InfoWindow({
 			map : map,
 			position : position,
-			content : '<a href="googleCloud.do?lat=' + position.lat() + '&lng='
-					+ position.lng() + '">'
+			content : '<a href="googleCloud.do?lat=' + position.lat() 
+					+ '&lng=' + position.lng() + '">'
 					+ 'Want to see top twitter trends around this place?'
 					+ '</a>'
 		});
@@ -140,7 +144,7 @@ display:none;
     
     <div id="analyticsContent">
     	<div class="page-header" id="chart-title">
-   		<h3>Most Searched Cities Chart</h3>
+   		<h3>Most Searched Cities</h3>
    	</div>
     	<div id="map-chart"></div>
     </div>
