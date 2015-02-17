@@ -15,6 +15,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import twitterAPI.GetHotTrends;
 import databean.FlickrPhoto;
 
 public class UploadAction extends Action {
@@ -38,7 +40,9 @@ public class UploadAction extends Action {
 
 			// File file =new File("333.jpg");
 			
-			String keyword = request.getParameter("keyword");
+			String par = request.getParameter("keyword");
+			String keyword = par.split("\\|")[0];
+			String woeid = par.split("\\|")[1];
 			keyword=keyword.replace(' ','+');
 			System.out.println(keyword);
 
@@ -91,9 +95,20 @@ public class UploadAction extends Action {
 
 			in.close();
 			con.disconnect();
-
-			request.setAttribute("keyword", request.getParameter("keyword"));
+			
+			request.setAttribute("woeid", woeid);
+			request.setAttribute("keyword", keyword);
 			request.setAttribute("photos", photos);
+			
+			ArrayList<String> trends =  GetHotTrends.getPopTrends(woeid);
+			
+			if (trends.size()>0){
+				request.setAttribute("num", trends.size());				
+				request.setAttribute("twitTrends", trends);
+			} else {
+				request.setAttribute("num", 0);				
+				request.setAttribute("twitTrends", "We are sorry please try again");
+			}
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

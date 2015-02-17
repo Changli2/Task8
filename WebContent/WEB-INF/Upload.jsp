@@ -1,7 +1,41 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="Header.jsp"></jsp:include>
-<div class="col-md-6 column">
+<div class="col-md-6 column" style="height:100%;">
+<script type="text/javascript">
+      google.load("visualization", "1");
+
+      // Set callback to run when API is loaded
+      google.setOnLoadCallback(drawVisualization);
+
+      // Called when the Visualization API is loaded.
+      function drawVisualization() {
+
+        // Create and populate a data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Tag');
+        data.addColumn('string', 'URL');
+        data.addRows(${num});
+        <c:set var="rowNum" value="${0}"/> 
+        <c:forEach var="trends" items="${twitTrends}">
+        	data.setCell(${rowNum}, 0, '${trends}');
+        	<c:set var="url" value="http://localhost:8080/Task8/upload.do?keyword=${trends}|${woeid}"/>
+        	data.setCell(${rowNum}, 1, '${url}');
+        	<c:set var="rowNum" value="${rowNum + 1}"/>
+        </c:forEach>
+        
+     	// Instantiate our table object.
+        var vis = new gviz_word_cumulus.WordCumulus(document.getElementById('map-cloud'));
+
+        // Draw our table with the data we created locally.
+        vis.draw(data, {text_color: '#03070b', speed: 15, width:window.innerWidth, height:window.innerHeight});
+               
+     }
+   </script>
+   
+   <div id="cloudContent">    	
+   		<div id="map-cloud"></div>
+   </div>
 </div>
 <div class="col-md-6 column">
 
@@ -40,19 +74,9 @@
         </div>
     </div>
 </div>
-```
-
-Include the following scripts at the bottom of the body of your webpage:
-
-```html
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
 <script src="js/bootstrap-image-gallery.min.js"></script>
-```
-
-Create a list of links to image files with the attribute **data-gallery** (optionally with enclosed thumbnails) and add them to the body of your webpage:
-
-```html
 <div id="links">
 
 <c:forEach var="photos" items="${photos}">

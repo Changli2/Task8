@@ -20,7 +20,7 @@
         <c:set var="rowNum" value="${0}"/> 
         <c:forEach var="trends" items="${twitTrends}">
         	data.setCell(${rowNum}, 0, '${trends}');
-        	<c:set var="url" value="http://localhost:8080/Task8/upload.do?keyword=${trends}"/>
+        	<c:set var="url" value="http://localhost:8080/Task8/upload.do?keyword=${trends}|${woeid}"/>
         	data.setCell(${rowNum}, 1, '${url}');
         	<c:set var="rowNum" value="${rowNum + 1}"/>
         </c:forEach>

@@ -66,6 +66,7 @@ public class WordCloudAction extends Action{
 					request.setAttribute("twitTrends", "We are sorry please try again");
 				}
 				
+				request.setAttribute("woeid", woeid);
 				
 				return "GoogleCloud.jsp";
 			} catch(RollbackException e) {
