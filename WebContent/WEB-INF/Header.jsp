@@ -8,12 +8,17 @@
 <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 <meta charset="utf-8">
 <title>Maven Trends</title>
-<link class="cssdeck" rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/font-awesome.min.css" />
 <link rel="stylesheet" href="css/bootstrap-responsive.min.css" class="cssdeck">
 <link rel="stylesheet" href="css/bootstrapValidator.min.css" />
 <link href="css/carousel.css" rel="stylesheet">
 <link href="css/style-index.css" rel="stylesheet">
+
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+<link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
+
+
 
 <!-- Javascript APIs -->
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
