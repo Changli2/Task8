@@ -133,14 +133,14 @@ display:none;
    	
 	<div id="appContent">
 		<div class="page-header" id="map-title">
-   			<h1>Click on the map</h1>
+   			<h3>Click on the map</h3>
    		</div>
 		<div id="map-canvas"></div>
 	</div>
     
     <div id="analyticsContent">
     	<div class="page-header" id="chart-title">
-   		<h1>Top ${num} Trending Tweets Chart</h1>
+   		<h3>Top ${num} Trending Tweets Chart</h3>
    	</div>
     	<div id="map-chart"></div>
     </div>

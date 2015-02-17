@@ -40,7 +40,9 @@
 >>>>>>> FETCH_HEAD
 </div>
 <div class="col-md-6 column">
-
+<div class="page-header">
+   	<h3>Flickr Photos on: ${keyword}</h3>
+</div>
 <div class="junbotron well">
 
 <div id="blueimp-gallery" class="blueimp-gallery">
@@ -127,9 +129,7 @@ Select a file to upload: <br />
 <a href="">show related pics</a>
 <a href="">get friends</a> -->
 
-<div class="page-header">
-   	<h1>Flickr Photos on: ${keyword}</h1>
-</div>
+
 </div>
 
 
