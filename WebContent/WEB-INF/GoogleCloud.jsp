@@ -35,7 +35,7 @@
    </script>
    
    <div class="page-header">
-   	<h1>Top ${num} Trending Tweets</h1>
+     <h1>Top ${num} Trending Tweets</h1>
    </div>
    
    <div id="cloudContent">    	
