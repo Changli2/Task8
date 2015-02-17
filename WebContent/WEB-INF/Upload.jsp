@@ -1,6 +1,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="Header.jsp"></jsp:include>
+
+<style>
+h1, h2, h3, h4, h5, h6 {
+	margin-top:0;
+	font-family: 'Source Sans Pro', sans-serif;
+	text-transform:uppercase;
+	font-weight:400;
+	color:#e2284d;
+}</style>
 <div class="col-md-6 column">
 </div>
 <div class="col-md-6 column">
@@ -71,6 +80,7 @@ Create a list of links to image files with the attribute **data-gallery** (optio
     <a href="images/orange.jpg" title="Orange" data-gallery>
         <img src="images/thumbnails/orange.jpg" alt="Orange">
     </a>
+</div>
 </div>
 <!-- <p>  example</p>
 <img src="https://farm3.staticflickr.com/2634/4046568058_0d7cffe35d.jpg"></img>
