@@ -138,15 +138,14 @@ body {
                     </li>
                     <li><a href="#services">Services</a>
                     </li>
-                    <li><a href="#contact">Contact</a>
-                    </li>
-                              
+                    <li><a href="#services">Contact</a>
+                        
                 </ul>
         </div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li>
-					<a id="logo-outer" href="homePage.do"><h2>MAVEN TRENDS</h2></a>
+					<a id="logo-outer" href="signIn.do"><h2>MAVEN TRENDS</h2></a>
 				</li>
 			</ul>
 		</div>

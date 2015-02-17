@@ -27,9 +27,13 @@ public class Controller extends HttpServlet{
 		Action.add(new HomePageAction(model));
 		Action.add(new GeoMapAction());
 		Action.add(new GoogleChartAction());
+
 		Action.add(new WordCloudAction(model));
 		Action.add(new UploadAction());
 		Action.add(new MapKMLAction());
+		Action.add(new SigninAction());
+		Action.add(new getVerifyAction());
+
 
 	}
 
@@ -48,7 +52,7 @@ public class Controller extends HttpServlet{
 		doGet(req, resp);
 	}
 	
-	private String performTheAction(HttpServletRequest req) {
+	private String performTheAction(HttpServletRequest req) throws IOException, ServletException {
 		//HttpSession session     = req.getSession(true);
         String      servletPath = req.getServletPath();
         String      action = getActionName(servletPath);
@@ -78,8 +82,12 @@ public class Controller extends HttpServlet{
 	   		d.forward(req,resp);
 	   		return;
     	}
+    	else{
+    		resp.sendRedirect(resp.encodeRedirectURL( nextPage));
+        	return;
+    	}
     	
-    	throw new ServletException(Controller.class.getName()+".sendToNextPage(\"" + nextPage + "\"): invalid extension.");
+    	//throw new ServletException(Controller.class.getName()+".sendToNextPage(\"" + nextPage + "\"): invalid extension.");
 	}
 	
 	private String getActionName(String path) {
