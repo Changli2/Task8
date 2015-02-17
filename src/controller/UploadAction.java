@@ -185,18 +185,23 @@ public class UploadAction extends Action {
 			for (int i = 0; i < 10; i++) {
 				String line = in.readLine();
 				if (!(line == null || line.equals(""))) {
+					
 					String[] parts = line.split("\\\"");
-					String id = parts[1];
-					String owner = parts[3];
-					String secret = parts[5];
-					String server = parts[7];
-					String farm = parts[9];
-					FlickrPhoto photo = new FlickrPhoto(id, owner, secret,
-							server, farm);
-					photos.add(photo);
+					if (parts.length >= 10) {
+						String id = parts[1];
+						String owner = parts[3];
+						String secret = parts[5];
+						String server = parts[7];
+						String farm = parts[9];
+						FlickrPhoto photo = new FlickrPhoto(id, owner, secret,
+								server, farm);
+						photos.add(photo);
+					} else {
+						System.out.println("backup branch");
+					}
+					
 
-					System.out.println(id);
-					System.out.println(owner);
+
 
 				}
 			}
