@@ -8,7 +8,7 @@
 	<c:forEach var="tweet" items="${tweets}">
 		<c:set var="running" value="${running}${tweet}"></c:set>
 	</c:forEach>
-   <marquee behavior="scroll" direction="left" scrollamount="3">Hellos ${running}</marquee>
+   <marquee behavior="scroll" direction="left" scrollamount="3">${running}</marquee>
    </div>
 <div class="col-md-6 column" style="height:100%;">
 <script type="text/javascript">
