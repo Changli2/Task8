@@ -37,7 +37,7 @@
    <div id="cloudContent">    	
    		<div id="map-cloud"></div>
    </div>
->>>>>>> FETCH_HEAD
+
 </div>
 <div class="col-md-6 column">
 <div class="page-header">
