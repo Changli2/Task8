@@ -29,7 +29,7 @@
         var vis = new gviz_word_cumulus.WordCumulus(document.getElementById('map-cloud'));
 
         // Draw our table with the data we created locally.
-        vis.draw(data, {text_color: '#03070b', speed: 25, width:window.innerWidth, height:window.innerHeight});
+        vis.draw(data, {text_color: '#03070b', speed: 15, width:window.innerWidth, height:window.innerHeight});
                
      }
    </script>
@@ -42,7 +42,7 @@
    		<div id="map-cloud"></div>
    </div>
    
-   <script type="text/javascript">
+   <!-- <script type="text/javascript">
 
       // Load the Visualization API and the piechart package.
       google.load('visualization', '1.0', {'packages':['corechart']});
@@ -74,47 +74,6 @@
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
-    </script>
-    
-    <div class="page-header">
-   		<h1>Top ${num} Trending Tweets Chart</h1>
-   	</div>
-    
-    <div style="width: 100%; height: 500px;" id="chart_div"></div>
-    
-	<script type="text/javascript">
-		//google.load('visualization', '1', {packages: ['corechart']});
-	    google.setOnLoadCallback(drawChart);
-	    
-	    var w = window.innerWidth;
-	
-	    function drawChart() {
-	
-	      var data = google.visualization.arrayToDataTable([
-	        ['Keyword','Number of Response'],
-	        <c:forEach var="trends" items="${twitTrends}">
-	          ['${trends}', ${random.nextInt(100)}],
-	        </c:forEach>
-	      ]);
-	
-	      var options = {
-	        title: '',
-	        width: w,
-	        height: 563,
-	        hAxis: {
-	          title: 'Number of Response',
-	          minValue: 0
-	        },
-	        vAxis: {
-	          title: 'Keyword'
-	        }
-	      };
-	
-	      var chart = new google.visualization.BarChart(document.getElementById('ex0'));
-	
-	      chart.draw(data, options);
-	    }
-    </script>
-    <div id="ex0"></div>
+    </script> -->
 
 <jsp:include page="Footer.jsp"></jsp:include>

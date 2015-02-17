@@ -24,6 +24,7 @@ public class WordCloudAction extends Action{
 			// TODO Auto-generated constructor stub
 			locationDAO= model.getLocationDAO();
 		}
+		
 		public String perform(HttpServletRequest request) {
 			List<String> errors = new ArrayList<String>();
 			request.setAttribute("errors", errors);
@@ -49,17 +50,20 @@ public class WordCloudAction extends Action{
 				
 				Location[] locs= locationDAO.getTopTen();
 				request.setAttribute("topten", locs);
+				
+				System.out.println(locs.length);
+				
 				String woeid= yahooid.getWoeid(lat, lang);
 				
 				System.out.println("woeid"+ woeid);
 				ArrayList<String> trends =  GetHotTrends.getPopTrends(woeid);
 				
-				if (trends.size()>1){
+				if (trends.size()>0){
 					request.setAttribute("num", trends.size());				
 					request.setAttribute("twitTrends", trends);
 				} else {
 					request.setAttribute("num", 0);				
-					request.setAttribute("twitTrends", "We are sorry, please try again");
+					request.setAttribute("twitTrends", "We are sorry please try again");
 				}
 				
 				
