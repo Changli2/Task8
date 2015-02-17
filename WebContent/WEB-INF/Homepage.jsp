@@ -45,7 +45,7 @@ display:none;
 
 		function initialize() {
    			var mapOptions = {
-     			zoom: 8,
+     			zoom: 6,
      			disableDefaultUI: true
    			};
    			
@@ -140,7 +140,7 @@ display:none;
     
     <div id="analyticsContent">
     	<div class="page-header" id="chart-title">
-   		<h3>Top ${num} Trending Tweets Chart</h3>
+   		<h3>Most Searched Cities Chart</h3>
    	</div>
     	<div id="map-chart"></div>
     </div>
