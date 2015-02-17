@@ -135,16 +135,14 @@ display:none;
 	google.maps.event.addDomListener(window, 'load', initialize);
 </script>
    
-	<div id="appContent">
+	<div id="appContent" class="col-md-6 column">
 		<div class="page-header" id="map-title">
-
    			<h3>Click on the map</h3>
-
    		</div>
 		<div id="map-canvas"></div>
 	</div>
     
-    <div id="analyticsContent">
+    <div id="analyticsContent" class="col-md-6 column">
     	<div class="page-header" id="chart-title">
    			<h3>Most Searched Cities</h3>
    		</div>

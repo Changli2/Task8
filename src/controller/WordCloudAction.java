@@ -35,6 +35,7 @@ public class WordCloudAction extends Action{
 			try {
 				YahooWoeid yahooid= new YahooWoeid();
 				String city= yahooid.getCity(lat, lang);
+				request.setAttribute("city", city);
 				System.out.println("here");
 				int num= locationDAO.numOfLocation(city);
 				System.out.println("num: "+num);

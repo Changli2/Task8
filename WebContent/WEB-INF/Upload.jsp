@@ -99,8 +99,13 @@
         <img src="${photos.thumbnail()}" alt="Banana">
     </a>
 </c:forEach>
+
 <%-- <c:forEach var="tweet" items="${tweets}">
 	<p style="font-size:medium; color:red">
+=======
+<c:forEach var="tweet" items="${tweets}">
+	<p style="font-size:medium; color:grey">
+>>>>>>> origin/master
 	${tweet} </br>
 	</p>
 </c:forEach> --%>
