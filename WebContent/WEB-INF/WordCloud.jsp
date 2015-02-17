@@ -58,8 +58,8 @@
   </head>
 
   <body>
-        <big>Top Ten Trending Tweets</big>
-        <div> </div>
+          <div> <h3>Top Ten Trending Tweets</h3></div>
+  
         <div id="mydiv"></div>
         
   </body>

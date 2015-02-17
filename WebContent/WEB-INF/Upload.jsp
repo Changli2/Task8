@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="Header.jsp"></jsp:include>
+
 <div class="col-md-6 column" style="height:100%;">
 <script type="text/javascript">
       google.load("visualization", "1");
@@ -36,9 +37,12 @@
    <div id="cloudContent">    	
    		<div id="map-cloud"></div>
    </div>
+
 </div>
 <div class="col-md-6 column">
-
+<div class="page-header">
+   	<h3>Flickr Photos on: ${keyword}</h3>
+</div>
 <div class="junbotron well">
 
 <div id="blueimp-gallery" class="blueimp-gallery">
@@ -96,6 +100,7 @@
         <img src="images/thumbnails/orange.jpg" alt="Orange"> 
     </a>-->
 </div>
+</div>
 <!-- <p>  example</p>
 <img src="https://farm3.staticflickr.com/2634/4046568058_0d7cffe35d.jpg"></img>
 <a href="">upload here</a>
@@ -124,9 +129,7 @@ Select a file to upload: <br />
 <a href="">show related pics</a>
 <a href="">get friends</a> -->
 
-<div class="page-header">
-   	<h1>Flickr Photos on: ${keyword}</h1>
-</div>
+
 </div>
 
 

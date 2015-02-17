@@ -27,6 +27,21 @@
 <script type="text/javascript" src="http://word-cumulus-goog-vis.googlecode.com/svn/trunk/swfobject.js"></script>
 
 <style>
+ h2 {
+	margin-top:0;
+	font-family: 'Source Sans Pro', sans-serif;
+	
+	font-weight:400;
+	color:#e2284d;
+}
+
+h3 {
+	margin-top:0;
+	font-family: 'Source Sans Pro', sans-serif;
+	
+	font-weight:400;
+	color:#676d98;
+}
 
 html, body {
     margin: 0px;
@@ -131,7 +146,7 @@ body {
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav">
 				<li>
-					<a id="logo-outer" href="homePage.do"><img alt="logo" id="logo" src="img/logo.png"></a>
+					<a id="logo-outer" href="homePage.do"><h2>MAVEN TRENDS</h2></a>
 				</li>
 			</ul>
 		</div>
