@@ -150,7 +150,7 @@ body {
 </div>
 </nav>
 </div>
-<div id="twitterbutton" style="position: relative;left: 15px;top: 25px;z-index: 100;margin-right: 5%; float: right;">	
+<div id="twitterbutton" style="position: relative;left: 15px;top: 6px;z-index: 100;margin-right: 5%; float: right;">	
 			<a href="https://twitter.com/intent/tweet?button_hashtag=MavenTrends&text=Wow!%20I%20found%20the%20trending%20topic%20near%20my%20place." class="twitter-hashtag-button" data-size="large">Tweet #MavenTrends</a>
 				<script>
 					!function(d, s, id) {

@@ -2,6 +2,14 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="Header.jsp"></jsp:include>
 
+<div id="runningText" style="height: 28px; border: 1px solid; float: right; background-color: #e9967a; color: white; margin-top: 7px; font-size: 16px; font-family: Times New Roman;">
+<c:set var="running" scope="request" value=""></c:set> 
+	
+	<c:forEach var="tweet" items="${tweets}">
+		<c:set var="running" value="${running}${tweet}"></c:set>
+	</c:forEach>
+   <marquee behavior="scroll" direction="left" scrollamount="3">Hellos ${running}</marquee>
+   </div>
 <div class="col-md-6 column" style="height:100%;">
 <script type="text/javascript">
       google.load("visualization", "1");
@@ -32,8 +40,11 @@
         vis.draw(data, {text_color: '#f05032', speed: 15, width:window.innerWidth, height:window.innerHeight});
                
      }
-   </script>
+   </script>	
    
+   
+	
+	 
    <div id="cloudContent">    	
    		<div id="map-cloud"></div>
    </div>
@@ -88,11 +99,11 @@
         <img src="${photos.thumbnail()}" alt="Banana">
     </a>
 </c:forEach>
-<c:forEach var="tweet" items="${tweets}">
+<%-- <c:forEach var="tweet" items="${tweets}">
 	<p style="font-size:medium; color:red">
 	${tweet} </br>
 	</p>
-</c:forEach>
+</c:forEach> --%>
 
 
     <!-- <a href="https://farm3.staticflickr.com/2634/4046568058_0d7cffe35d.jpg" title="" data-gallery>
@@ -136,7 +147,6 @@ Select a file to upload: <br />
 
 
 </div>
-
 
 
 <jsp:include page="Footer.jsp"></jsp:include>
