@@ -27,6 +27,14 @@
 <script type="text/javascript" src="http://word-cumulus-goog-vis.googlecode.com/svn/trunk/swfobject.js"></script>
 
 <style>
+h1 {
+	margin-top:0;
+	font-family: 'Source Sans Pro', sans-serif;
+	
+	font-weight:500;
+	color:#03070b;
+}
+
  h2 {
 	margin-top:0;
 	font-family: 'Source Sans Pro', sans-serif;
