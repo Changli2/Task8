@@ -53,7 +53,7 @@ box-shadow: 0px 2px 2px #606366;
                     </li>
                     <li><a href="#services">Services</a>
                     </li>
-                    <li><a href="signIn.do">Contact</a>
+                    <li><a href="#contact">Contact</a>
                     </li>
                     <li><a href="logout.do">Logout</a>
                    </li>
@@ -67,7 +67,7 @@ box-shadow: 0px 2px 2px #606366;
 			id="bs-example-navbar-collapse-1">
 
 			<ul class="nav navbar-nav">
-				<li><a id="logo-outer" href="signIn.do"><img alt="logo"
+				<li><a id="logo-outer" href="login.do"><img alt="logo"
 						id="logo" src="img/logo.png">Maven Trends</a></li>
 
 
