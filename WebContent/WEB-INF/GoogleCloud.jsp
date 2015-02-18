@@ -34,9 +34,9 @@
      }
    </script>
    
-   <div class="page-header">
+   <%-- <div class="page-header">
      <h1>Folks of ${city} Like</h1>
-   </div>
+   </div> --%>
    
    <div id="cloudContent">    	
    		<div id="map-cloud"></div>

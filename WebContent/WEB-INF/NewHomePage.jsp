@@ -135,62 +135,23 @@ display:none;
 	google.maps.event.addDomListener(window, 'load', initialize);
 </script>
    
-	<div id="appContent" class="col-md-6 column affix" style = "position: absolute;
+	<div id="appContent" class="col-md-8 column" style = "position: absolute;
 left: 0px;
 top: 0px;
 z-index: 8;
 width: 917px;
-">
+height: 315px;">
 		<div class="page-header" id="map-title">
    			<h3>Click on the map</h3>
    		</div>
 		<div id="map-canvas"></div>
 	</div>
-
-
-
     
-    <div id="analyticsContent"  style = "position: relative;z-index: 9;	background-color: WHITE; width: 450px; overflow: scroll;" >
-    	<div style = " margin: 20px;">
+    <div id="analyticsContent" class="col-md-4 column">
     	<div class="page-header" id="chart-title">
    			<h3>Most Searched Cities</h3>
    		</div>
-   		<div class="media">
-        <a href="#" class="pull-left">
-            <img src="https://farm3.staticflickr.com/2859/10161609246_7c03cda038_s.jpg" class="media-object" alt="Sample Image">
-        </a>
-        <div class="media-body">
-            <h4 class="media-heading">Jhon Carter <small><i>Posted on January 10, 2014</i></small></h4>
-            <p>Excellent feature! I love it. One day I'm definitely going to put this Bootstrap component into use and I'll let you know once I do.</p>
-        </div>
-    </div>
-    <hr />
-    <div class="media">
-        <a href="#" class="pull-left">
-            <img src="https://farm3.staticflickr.com/2859/10161609246_7c03cda038_s.jpg" class="media-object" alt="Sample Image">
-        </a>
-        <div class="media-body">
-            <h4 class="media-heading">Jhon Carter <small><i>Posted on January 10, 2014</i></small></h4>
-            <p>Excellent feature! I love it. One day I'm definitely going to put this Bootstrap component into use and I'll let you know once I do.</p>
-        </div>
-    </div>
-    <hr />
-    <div class="media">
-        <a href="#" class="pull-left">
-            <img src="https://farm3.staticflickr.com/2859/10161609246_7c03cda038_s.jpg" class="media-object" alt="Sample Image">
-        </a>
-        <div class="media-body">
-            <h4 class="media-heading">Jhon Carter <small><i>Posted on January 10, 2014</i></small></h4>
-            <p>Excellent feature! I love it. One day I'm definitely going to put this Bootstrap component into use and I'll let you know once I do.</p>
-        </div>
-    </div>
-    <hr />
-   		<ul class="nav nav-pills nav-stacked" style =" background-color: WHITE;">
-<li role="presentation" class="active"><<a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li></ul>
     	<div id="map-chart"></div>
-    </div>
     </div>
     
     <script type="text/javascript">
