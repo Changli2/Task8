@@ -54,7 +54,7 @@
     		<div class="page-header" id="chart-title">
    				<h3>Daily User Visit Count</h3>
    			</div>    
-    		<div id="curve_chart"></div>
+    		<div id="curve-chart"></div>
     	</div>
     </div>
      <script type="text/javascript">
@@ -63,10 +63,9 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Date', 'Number of Visits'],
-          ['2013',  1000],
-          ['2014',  1170],
-          ['2015',  660],
-          ['2016',  1030]
+          <c:forEach var="vis" items="${visits}">
+          	['${vis.date}', ${vis.numOfVisit}],
+          </c:forEach>
         ]);
 
         var options = {
@@ -75,7 +74,91 @@
           vAxis: {minValue: 0}
         };
 
-        var chart = new google.visualization.AreaChart(document.getElementById('curve_chart'));
+        var chart = new google.visualization.AreaChart(document.getElementById('curve-chart'));
+        chart.draw(data, options);
+      }
+    </script>
+    
+    <div class="col-md-6 column" style="height:100%;">
+		<div id="pieContent" >
+    		<div class="page-header" id="chart-title">
+   				<h3>Most Searched Cities</h3>
+   			</div>
+    		<div id="pie-chart"></div>
+    	</div>
+    </div>
+    
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'City');
+        data.addColumn('number', 'Number of Search');
+        data.addRows([
+			<c:forEach var="city" items="${topten}">
+				['${city.locName}', ${city.count}],
+			</c:forEach>
+        ]);
+
+        // Set chart options
+        var options = {'title':'',
+                       is3D: true};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('pie-chart'));
+        chart.draw(data, options);
+      }
+    </script>
+    
+    <div class="col-md-6 column" style="height:100%;">
+		<div id="mieContent" >
+    		<div class="page-header" id="chart-title">
+   				<h3>Daily User Visit Count</h3>
+   			</div>
+    		<div id="mie-chart"></div>
+    	</div>
+    </div>
+    
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Date');
+        data.addColumn('number', 'Number of Visit');
+        data.addRows([
+			<c:forEach var="vis" items="${visits}">
+				['${vis.date}', ${vis.numOfVisit}],
+			</c:forEach>
+        ]);
+
+        // Set chart options
+        var options = {'title':'',
+                       is3D: true};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('mie-chart'));
         chart.draw(data, options);
       }
     </script>

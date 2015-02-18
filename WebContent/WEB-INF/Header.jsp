@@ -103,13 +103,41 @@ body {
     margin-top: 28px;
 }
 
+#pieContent {
+	float: left;
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    margin-top: 28px;
+}
+
+#mieContent {
+	float: right;
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    margin-top: 28px;
+}
+
 #map-chart {
 	overflow: hidden;
 	transform: translateZ(0px);
 	height:90%;
 }
 
-#curve_chart {
+#curve-chart {
+	overflow: hidden;
+	transform: translateZ(0px);
+	height:90%;
+}
+
+#pie-chart {
+	overflow: hidden;
+	transform: translateZ(0px);
+	height:90%;
+}
+
+#mie-chart {
 	overflow: hidden;
 	transform: translateZ(0px);
 	height:90%;
@@ -168,7 +196,7 @@ body {
 					<a id="logo-outer" href= "homePage.do"><h2>MAVEN TRENDS</h2></a>
 				</li>
 				<%
-				System.out.println(session.getAttribute("user"));
+				//System.out.println(session.getAttribute("user"));
 				if ( session.getAttribute("user") == null){
 				%>
 				<li><a id ="logo-outer"  href="signIn.do"><img alt="SignIn with Twitter" src="img/img/sign-in-with-twitter-button.png" style = " height : 30px;"></a>
