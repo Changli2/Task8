@@ -30,7 +30,7 @@ public class Controller extends HttpServlet{
 		Action.add(new WordCloudAction(model));
 		Action.add(new UploadAction());
 		Action.add(new MapKMLAction());
-		Action.add(new SigninAction());
+		Action.add(new SigninAction(model));
 		Action.add(new WelcomAction());
 		Action.add(new getVerifyAction(model));
 

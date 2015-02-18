@@ -10,7 +10,7 @@ public class Model {
 	private UserDAO userDAO;
 	private CommentDAO commentDAO;	
 	private LocationDAO locationDAO;
-
+	private VisitDAO visitDAO;
 
 	public Model(ServletConfig config) throws ServletException {		
 		// initialise tables in my-sql database
@@ -22,11 +22,12 @@ public class Model {
 			String userTbl = "team8_user";
 			String commentTbl = "team8_comment";
 			String locationtbl= "team8_location";
+			String visittbl= "team8_visit";
 			
 			userDAO = new UserDAO(cp, userTbl);
 			commentDAO = new CommentDAO(cp, commentTbl);
 			locationDAO = new LocationDAO(cp, locationtbl);
-
+			visitDAO = new VisitDAO(cp, visittbl);
 			
 		} catch (DAOException e) {
 			throw new ServletException(e);
@@ -36,4 +37,5 @@ public class Model {
 	public UserDAO getEmployeeDAO()  { return userDAO; }
 	public CommentDAO getCustomerDAO()  { return commentDAO; }
 	public LocationDAO getLocationDAO() { return locationDAO; }
+	public VisitDAO getVisitDAO() { return visitDAO; }
 }

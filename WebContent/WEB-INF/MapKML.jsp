@@ -5,7 +5,7 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>GeoRSS Layers</title>
+    <title>Maven Trends</title>
     <style>
       html, body, #map-canvas {
         height: 100%;

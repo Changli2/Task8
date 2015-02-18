@@ -22,11 +22,15 @@ public class VisitDAO extends GenericDAO<VisitBean>{
 		String str = dateFormat.format(dt);
 		VisitBean visit  = read(str);
 		if (visit == null) {
-			visit.setNumOfVisit(1);
+			VisitBean visitBean= new VisitBean();
+			visitBean.setNumOfVisit(1);
+			visitBean.setDate(str);
+			create(visitBean);
 		} else {
 			visit.setNumOfVisit(visit.getNumOfVisit() + 1);
+			update(visit);
 		}
-		update(visit);
+		
 		
 	}
 	

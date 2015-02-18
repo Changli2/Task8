@@ -3,6 +3,7 @@ package controller;
 import java.io.IOException;
 
 import model.Model;
+import model.VisitDAO;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -11,6 +12,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
+import org.genericdao.RollbackException;
 import org.scribe.builder.ServiceBuilder;
 import org.scribe.builder.api.Api;
 import org.scribe.builder.api.TwitterApi;
@@ -26,6 +28,7 @@ import javax.servlet.http.HttpSession;
 
 
 public class SigninAction extends Action {
+	private VisitDAO visitDao;
 	private static final String PROTECTED_RESOURCE_URL = "https://api.twitter.com/1.1/account/verify_credentials.json";
 
 	@Override
@@ -34,6 +37,10 @@ public class SigninAction extends Action {
 		return "signIn.do";
 	}
 
+	public SigninAction(Model model) {
+		// TODO Auto-generated constructor stub
+		visitDao= model.getVisitDAO();
+	}
 	@Override
 	public String perform(HttpServletRequest request)
 			{
@@ -54,6 +61,12 @@ public class SigninAction extends Action {
 		 System.out.println(service.getAuthorizationUrl(requestToken));
 		 HttpSession session = request.getSession();
 	     session.setAttribute("token",requestToken);
+	     try {
+			visitDao.increase();
+		} catch (RollbackException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		// request.setAttribute("token", requestToken);
 		//String url = service.getAuthorizationUrl(requestToken);
 		//System.out.println(url);
