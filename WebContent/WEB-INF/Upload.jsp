@@ -75,7 +75,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title"></h4>
+                    <h4 class="modal-title">haha</h4>
                 </div>
                 <div class="modal-body next"></div>
                 <div class="modal-footer">
@@ -98,7 +98,7 @@
 <div id="links">
 
 <c:forEach var="photos" items="${photos}">
-	<a href="${photos}" title="" data-gallery>
+	<a href="${photos}" title="${photos.id}" data-gallery>
         <img src="${photos.thumbnail()}" alt="Banana">
     </a>
 </c:forEach>

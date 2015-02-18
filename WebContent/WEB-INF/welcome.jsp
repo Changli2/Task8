@@ -157,7 +157,7 @@
 							<li class="slide1">
 								<div class="container">
 									<div class="caption_middle clearfix">
-										<div class="caption_img1 FromLeft"><img src="images/slider/caption_img1.png" alt="" /></div>
+										<div class="caption_img1 FromLeft"><img src="images/slider/8iaap-worldhands.gif" alt="" /></div>
 										<div class="flex_caption1 FromRight">
 											<p>Welcome to Maven Trends</p>
 											<span>Here to explore interesting stuff around the world</span>
@@ -169,7 +169,7 @@
 							<li class="slide2">
 								<div class="container">
 									<div class="caption_middle clearfix">
-										<div class="caption_img2 FromTop"><img src="images/slider/caption_img2.png" alt="" /></div>
+										<div class="caption_img2 FromTop"><img src="images/slider/8iaap-worldhands.gif" alt="" /></div>
 										<div class="flex_caption1 FromBottom">
 											<p>From Here  <b>Discover the World</b></p>
 											<a href="homePage.do" class="btn btn-danger btn-lg"><i class="glyphicon glyphicon-eye-open"></i> Start Now!</a>

@@ -67,6 +67,11 @@ public class FlickrPhoto {
 		//https://farm3.staticflickr.com/2634/4046568058_0d7cffe35d.jpg
 		
 	}
+	public String small(){
+		return "https://farm"+farm+".staticflickr.com/"+server+"/"+id+"_"+secret+"_s.jpg";
+		//https://farm3.staticflickr.com/2634/4046568058_0d7cffe35d.jpg
+		
+	}
 	
 	
 }

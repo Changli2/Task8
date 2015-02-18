@@ -152,8 +152,78 @@ width: 917px;
     
     <div id="analyticsContent"  style = "position: relative;z-index: 9;	background-color: WHITE; width: 450px; overflow: scroll;" >
     	<div style = " margin: 20px;">
+    	
     	<div class="page-header" id="chart-title">
-   			<h3>Most Searched Cities</h3>
+   			<h3>Pics from Hot Location</h3>
+   		</div>
+    	
+    	<div id="blueimp-gallery" class="blueimp-gallery">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">haha</h4>
+                </div>
+                <div class="modal-body next"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left prev">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        Previous
+                    </button>
+                    <button type="button" class="btn btn-primary next">
+                        Next
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+<script src="js/bootstrap-image-gallery.min.js"></script>
+<div id="links">
+
+<c:forEach var="photos" items="${photos}">
+	<a href="${photos}" title="${photos.id}" data-gallery>
+        <img src="${photos.small()}" alt="Banana">
+    </a>
+</c:forEach>
+
+<%-- <c:forEach var="tweet" items="${tweets}">
+	<p style="font-size:medium; color:red">
+=======
+<c:forEach var="tweet" items="${tweets}">
+	<p style="font-size:medium; color:grey">
+>>>>>>> origin/master
+	${tweet} </br>
+	</p>
+</c:forEach> --%>
+
+
+    <!-- <a href="https://farm3.staticflickr.com/2634/4046568058_0d7cffe35d.jpg" title="" data-gallery>
+        <img src="https://farm3.staticflickr.com/2634/4046568058_0d7cffe35d.jpg" alt="Banana">
+    </a>
+    <a href="images/apple.jpg" title="Apple" data-gallery>
+        <img src="images/thumbnails/apple.jpg" alt="Apple">
+    </a>
+    <a href="images/orange.jpg" title="Orange" data-gallery>
+        <img src="images/thumbnails/orange.jpg" alt="Orange"> 
+    </a>-->
+</div>
+    	<div class="page-header" id="chart-title">
+   			<h3>Tweets from Hot Location</h3>
    		</div>
    		<div class="media">
         <a href="#" class="pull-left">
@@ -185,10 +255,10 @@ width: 917px;
         </div>
     </div>
     <hr />
-   		<ul class="nav nav-pills nav-stacked" style =" background-color: WHITE;">
+   		<!-- <ul class="nav nav-pills nav-stacked" style =" background-color: WHITE;">
 <li role="presentation" class="active"><<a href="#">Home</a></li>
   <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li></ul>
+  <li role="presentation"><a href="#">Messages</a></li></ul> -->
     	<div id="map-chart"></div>
     </div>
     </div>
