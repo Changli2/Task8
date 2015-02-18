@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <jsp:include page="Header.jsp"></jsp:include>
 
 <div id="runningText" style="height: 28px; border: 1px solid; float: right; background-color: #e9967a; color: white; margin-top: 7px; font-size: 16px; font-family: Times New Roman;">
@@ -52,7 +53,8 @@
 </div>
 <div class="col-md-6 column">
 <div class="page-header">
-   	<h3>Flickr Photos on: ${keyword}</h3>
+	<c:set var="keyed" value="${fn:replace(keyword,'+', ' ')}" />
+   	<h3>Flickr Photos on: ${keyed}</h3>
 </div>
 <div class="junbotron well">
 

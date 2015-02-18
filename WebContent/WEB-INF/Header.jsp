@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -160,8 +161,22 @@ body {
 </div>
 </nav>
 </div>
+
+<c:choose>
+  <c:when test="${!(empty city)}">
+    <c:set var="twitText" scope="session" value="Wow!%20I%20found%20the%20trending%20topics%20around%20${city}"/>
+  </c:when>
+  <c:when test="${!(empty keyword)}">
+  	<c:set var="keyed" value="${fn:replace(keyword,'+', ' ')}" />
+    <c:set var="twitText" scope="session" value="Wow!%20I%20found%20great%20pictures%20of%20${keyed}"/>
+  </c:when>
+  <c:otherwise>
+  	 <c:set var="twitText" scope="session" value="Wow!%20I%20found%20the%20trending%20topics%20from%20MavenTrends"/>
+  </c:otherwise>
+</c:choose>
+
 <div id="twitterbutton" style="position: relative;left: 15px;top: 6px;z-index: 100;margin-right: 5%; float: right;">	
-			<a href="https://twitter.com/intent/tweet?button_hashtag=MavenTrends&text=Wow!%20I%20found%20the%20trending%20topic%20near%20my%20place." class="twitter-hashtag-button" data-size="large">Tweet #MavenTrends</a>
+			<a href="https://twitter.com/intent/tweet?button_hashtag=MavenTrends&text=${twitText}." class="twitter-hashtag-button" data-size="large">Tweet #MavenTrends</a>
 				<script>
 					!function(d, s, id) {
 						var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/
