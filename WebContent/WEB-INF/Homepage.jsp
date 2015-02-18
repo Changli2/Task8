@@ -225,16 +225,19 @@ width: 917px;
     	<div class="page-header" id="chart-title">
    			<h3>Tweets from Hot Location</h3>
    		</div>
+   		
+   		<c:forEach var="tweet" items="${tweets}">
    		<div class="media">
         <a href="#" class="pull-left">
             <img src="https://farm3.staticflickr.com/2859/10161609246_7c03cda038_s.jpg" class="media-object" alt="Sample Image">
         </a>
         <div class="media-body">
-            <h4 class="media-heading">Jhon Carter <small><i>Posted on January 10, 2014</i></small></h4>
-            <p>Excellent feature! I love it. One day I'm definitely going to put this Bootstrap component into use and I'll let you know once I do.</p>
+            <h4 class="media-heading">Username <small><i>hahahahahahahalocation</i></small></h4>
+            <p>${tweet}</p>
         </div>
     </div>
     <hr />
+    </c:forEach>
     <div class="media">
         <a href="#" class="pull-left">
             <img src="https://farm3.staticflickr.com/2859/10161609246_7c03cda038_s.jpg" class="media-object" alt="Sample Image">

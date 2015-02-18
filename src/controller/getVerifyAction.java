@@ -393,7 +393,7 @@ public class getVerifyAction extends Action{
 			e.printStackTrace();
 		}
 		
-		return "Homepage.jsp";
+		return "homePage.do";
 	}
 
 	
