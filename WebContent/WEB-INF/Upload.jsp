@@ -11,7 +11,7 @@
 	</c:forEach>
    <marquee behavior="scroll" direction="left" scrollamount="3">${running}</marquee>
    </div>
-<div class="col-md-6 column" style="height:100%;">
+<div class="col-md-7 column" style="height:100%;">
 <script type="text/javascript">
       google.load("visualization", "1");
 
@@ -38,7 +38,7 @@
         var vis = new gviz_word_cumulus.WordCumulus(document.getElementById('map-cloud'));
 
         // Draw our table with the data we created locally.
-        vis.draw(data, {text_color: '#f05032', speed: 15, width:window.innerWidth, height:window.innerHeight});
+        vis.draw(data, {text_color: '#03070b', speed: 15, width:window.innerWidth, height:window.innerHeight});
                
      }
    </script>	
@@ -51,12 +51,13 @@
    </div>
 
 </div>
-<div class="col-md-6 column">
+<div class="col-md-5 column">
+
+<div class="junbotron well" style = " width: 520px;  background-color: BLACK;">
 <div class="page-header">
 	<c:set var="keyed" value="${fn:replace(keyword,'+', ' ')}" />
    	<h3>Flickr Photos on: ${keyed}</h3>
 </div>
-<div class="junbotron well">
 
 <div id="blueimp-gallery" class="blueimp-gallery">
     <!-- The container for the modal slides -->

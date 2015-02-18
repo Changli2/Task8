@@ -154,8 +154,13 @@ body {
 				<li>
 					<a id="logo-outer" href= "homePage.do"><h2>MAVEN TRENDS</h2></a>
 				</li>
+				<%
+				System.out.println(session.getAttribute("user"));
+				if ( session.getAttribute("user") == null){
+				%>
 				<li><a id ="logo-outer"  href="signIn.do"><img alt="SignIn with Twitter" src="img/img/signIn.jpg"></a>
 				</li>
+				<% } %>
 			</ul>
 		</div>
 </div>
