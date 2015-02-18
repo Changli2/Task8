@@ -214,7 +214,7 @@ public class HomePageAction extends Action{
 				
 				JSONObject jsonresponse = new JSONObject();
 				HttpSession session = request.getSession();
-				String p =(String) request.getParameter("keyword");
+				//String p =(String) request.getParameter("keyword");
 				
 				String q = "pittsburgh";
 				
@@ -260,6 +260,7 @@ public class HomePageAction extends Action{
 						+ "&oauth_timestamp=" + oauth_timestamp + "&oauth_token="
 						+ encode(oauth_token) + "&oauth_version=1.0&q=" + encode(q)
 						+ "&result_type=mixed";
+				
 				System.out.println("parameter_string=" + parameter_string);
 				String twitter_endpoint = "https://api.twitter.com/1.1/search/tweets.json";
 				String twitter_endpoint_host = "api.twitter.com";
@@ -407,7 +408,8 @@ public class HomePageAction extends Action{
 				String result = jsonresponse.toString();
 				ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 				tweets = parseTweetJson(result, tweets);
-				session.setAttribute("hompagetweets", tweets);
+				//System.out.println(tweets.get(0).getName()+"finally got");
+				session.setAttribute("homepagetweets", tweets);
 			} catch (MalformedURLException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
