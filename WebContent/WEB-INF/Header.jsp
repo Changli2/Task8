@@ -158,7 +158,7 @@ body {
 				System.out.println(session.getAttribute("user"));
 				if ( session.getAttribute("user") == null){
 				%>
-				<li><a id ="logo-outer"  href="signIn.do"><img alt="SignIn with Twitter" src="img/img/signIn.jpg"></a>
+				<li><a id ="logo-outer"  href="signIn.do"><img alt="SignIn with Twitter" src="img/img/sign-in-with-twitter-button.png" style = " height : 30px;"></a>
 				</li>
 				<% } %>
 			</ul>
