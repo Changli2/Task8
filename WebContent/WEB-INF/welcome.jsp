@@ -161,7 +161,7 @@
 										<div class="flex_caption1 FromRight">
 											<p>Welcome to Maven Trends</p>
 											<span>Here to explore interesting stuff around the world</span>
-											<a href="homePage.do" class="btn btn-danger btn-lg"><i class="glyphicon glyphicon-eye-open"></i> Start Now!</a>
+											<a href="signIn.do" class="btn btn-danger btn-lg"><i class="glyphicon glyphicon-eye-open"></i> Start Now!</a>
 										</div>
 									</div>
 								</div>
