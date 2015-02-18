@@ -88,11 +88,31 @@ body {
     background-color: #eeeeee;
 }
 
-#analyticsContent {
-	float: right;
-    width: 50%;
+#curveContent {
+	float: left;
+    width: 100%;
     height: 100%;
     background-color: #eeeeee;
+}
+
+#analyticsContent {
+	float: right;
+    width: 100%;
+    height: 100%;
+    background-color: #eeeeee;
+    margin-top: 28px;
+}
+
+#map-chart {
+	overflow: hidden;
+	transform: translateZ(0px);
+	height:90%;
+}
+
+#curve_chart {
+	overflow: hidden;
+	transform: translateZ(0px);
+	height:90%;
 }
 
 #map-canvas {
@@ -110,13 +130,6 @@ body {
 	transform: translateZ(0px);
 	width: 100%;
 	height: 100%;
-}
-
-#map-chart {
-	position: relative;
-	overflow: hidden;
-	transform: translateZ(0px);
-	height:90%;
 }
 
  h1, h2, h3, h4, h5, h6 {
