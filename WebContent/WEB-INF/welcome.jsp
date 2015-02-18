@@ -172,7 +172,7 @@
 										<div class="caption_img2 FromTop"><img src="images/slider/8iaap-worldhands.gif" alt="" /></div>
 										<div class="flex_caption1 FromBottom">
 											<p>From Here  <b>Discover the World</b></p>
-											<a href="homePage.do" class="btn btn-danger btn-lg"><i class="glyphicon glyphicon-eye-open"></i> Start Now!</a>
+											<a href="signIn.do" class="btn btn-danger btn-lg"><i class="glyphicon glyphicon-eye-open"></i> Start Now!</a>
 										</div>
 									</div>
 								</div>
