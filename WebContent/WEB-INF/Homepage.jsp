@@ -229,40 +229,21 @@ width: 917px;
    		<c:forEach var="tweet" items="${homepagetweets}">
    		<div class="media">
         <a href="#" class="pull-left">
-            <img src="https://farm3.staticflickr.com/2859/10161609246_7c03cda038_s.jpg" class="media-object" alt="Sample Image">
-        </a>
+<!--             <img src="https://farm3.staticflickr.com/2859/10161609246_7c03cda038_s.jpg" class="media-object" alt="Sample Image">
+ -->        </a>
         <div class="media-body">
-            <h4 class="media-heading">${homepagetweets.getName()} <small><i>from Location:Pittsburgh</i></small></h4>
-            <p>${homepagetweets.getText()}</p>
+            <h4 class="media-heading">${tweet.name} <small><i>from Location:Pittsburgh</i></small></h4>
+            <p>${tweet.text}</p>
         </div>
     </div>
     <hr />
     </c:forEach>
-    <div class="media">
-        <a href="#" class="pull-left">
-            <img src="https://farm3.staticflickr.com/2859/10161609246_7c03cda038_s.jpg" class="media-object" alt="Sample Image">
-        </a>
-        <div class="media-body">
-            <h4 class="media-heading">Jhon Carter <small><i>Posted on January 10, 2014</i></small></h4>
-            <p>Excellent feature! I love it. One day I'm definitely going to put this Bootstrap component into use and I'll let you know once I do.</p>
-        </div>
-    </div>
-    <hr />
-    <div class="media">
-        <a href="#" class="pull-left">
-            <img src="https://farm3.staticflickr.com/2859/10161609246_7c03cda038_s.jpg" class="media-object" alt="Sample Image">
-        </a>
-        <div class="media-body">
-            <h4 class="media-heading">Jhon Carter <small><i>Posted on January 10, 2014</i></small></h4>
-            <p>Excellent feature! I love it. One day I'm definitely going to put this Bootstrap component into use and I'll let you know once I do.</p>
-        </div>
-    </div>
-    <hr />
+    
    		<!-- <ul class="nav nav-pills nav-stacked" style =" background-color: WHITE;">
 <li role="presentation" class="active"><<a href="#">Home</a></li>
   <li role="presentation"><a href="#">Profile</a></li>
   <li role="presentation"><a href="#">Messages</a></li></ul> -->
-    	<div id="map-chart"></div>
+    	<!-- <div id="map-chart"></div> -->
     </div>
     </div>
     
