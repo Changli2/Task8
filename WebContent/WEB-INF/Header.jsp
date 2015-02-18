@@ -182,6 +182,8 @@ body {
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse navbar-right navbar-ex1-collapse" >
                 <ul class="nav navbar-nav">
+                <li><a id ="logo-outer"  href="googleChart.do"> <img alt="SignIn with Twitter" src="img/img/test-18-512.png" style = " height : 30px;"></a>
+				</li>
                     <li><a href="#about">About</a>
                     </li>
                     <li><a href="#services">Services</a>
@@ -202,6 +204,8 @@ body {
 				<li><a id ="logo-outer"  href="signIn.do"><img alt="SignIn with Twitter" src="img/img/sign-in-with-twitter-button.png" style = " height : 30px;"></a>
 				</li>
 				<% } %>
+				
+				
 			</ul>
 		</div>
 </div>
